@@ -13,7 +13,7 @@
     margin-top: 90px;
 }
 .project_icon.bt.myicons img {
-	width: 60%;
+	width: 50%;
 	margin: auto;
 	display: block;
 }
@@ -1067,6 +1067,10 @@ textarea{
     overflow: hidden;
 }
 
- .mydesigns{
-	 overflow:hidden;
- }
+.mydesigns {
+	overflow:hidden;
+}
+
+p span.header {
+	font-weight: 700;
+}
