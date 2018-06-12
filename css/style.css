@@ -920,7 +920,7 @@ img.hides{
 	height:450px;
 	padding:140px 0;
 	position:relative;
-	z-index:9999;
+	z-index:5;
 }
 .overlays {
     position: absolute; 
