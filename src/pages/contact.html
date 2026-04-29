@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us | Lunatech (Pty) Ltd.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lunatech is a South African software powerhouse established in 2014, leading the charge in AI-driven development, Blockchain, and next-generation digital solutions for the 2026 landscape.">
+    <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved." />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/logo48.png">
+</head>
+<body class="font-['Montserrat'] text-gray-800 bg-white">
+    <include src="header.html"></include>
+
+    <div class="pt-24 pb-12 bg-gray-50 border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-black text-lunatech-blue uppercase tracking-widest">Contact Us</h1>
+            <nav class="flex text-sm font-bold uppercase mt-4">
+                <a href="index.html" class="text-gray-400 hover:text-lunatech-blue">Home</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-lunatech-blue">Contact</span>
+            </nav>
+        </div>
+    </div>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <!-- Contact Info -->
+                <div class="space-y-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-lunatech-blue uppercase mb-8 tracking-tighter">Get In Touch</h2>
+                        <p class="text-lg text-gray-600 mb-12">We’d love to hear from you. Whether you have a question about our 2026 AI services or want to discuss a potential partnership, our team is ready to help.</p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-300">
+                                <i class="fa fa-map-marker text-2xl text-lunatech-blue group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-lunatech-blue">Our Location</h4>
+                                <p class="text-gray-600">J-Bay Surf Village, 2a Da Gama Rd, Jeffreys Bay, 6330, South Africa</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-6 group">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-300">
+                                <i class="fa fa-envelope text-xl text-lunatech-blue group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-lunatech-blue">Email Us</h4>
+                                <a href="mailto:contact@lunatech.co.za" class="text-gray-600 hover:text-lunatech-blue transition duration-300">contact@lunatech.co.za</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-xl h-80">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.1119565578763!2d24.9213!3d-34.0535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e660e6e8790176d%3A0xc4e5904d0392f694!2sJ-Bay%20Surf%20Village!5e0!3m2!1sen!2sza!4v1651234567890!5m2!1sen!2sza"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-12 rounded-3xl border border-gray-100 shadow-inner">
+                    <h3 class="text-2xl font-bold text-lunatech-blue uppercase mb-8 tracking-widest">Send a Message</h3>
+                    <form action="#" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="First Name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                            <input type="text" placeholder="Last Name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                        </div>
+                        <input type="email" placeholder="Email Address" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                        <input type="text" placeholder="Subject" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                        <textarea placeholder="Your Message" rows="6" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300"></textarea>
+                        <button type="submit" class="w-full py-5 bg-lunatech-blue text-white font-black uppercase tracking-[0.2em] rounded-xl hover:bg-lunatech-dark transition duration-500 shadow-lg">Submit Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <include src="footer.html"></include>
+</body>
+</html>
