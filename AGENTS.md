@@ -19,7 +19,7 @@ Welcome, Agent. You are working on the Lunatech (Pty) Ltd. repository. This site
 
 ## Content Integrity
 - **Team:** Maintain the updated team list (Ryno, Sam, Jonathan, Stephen, Lyle, Nathan, Dustin, Duwayne).
-- **Projects:** The primary showcased projects are **ChainEX (AI Augmented)** and the **LunaAI Framework**. References to legacy projects like Blocktix or Particl should remain removed unless specified otherwise.
+- **Projects:** The primary showcased projects are **ChainEX** and the **LunaAI Framework**. References to legacy projects like Blocktix or Particl should remain removed unless specified otherwise.
 
 ## Verification
 - Always verify UI changes with Playwright screenshots.
