@@ -6,6 +6,11 @@
     border-bottom: 3px solid #fff;
     border-bottom-style: dotted;
 }
+
+.nav-link-active {
+    color: #fff !important;
+    border-bottom: 3px dotted #fff;
+}
 .project_icon.myicons {
     margin-top: 60px;
 }
@@ -732,6 +737,18 @@ h2{
 
 header#header.mydesign {
     background: #064c7c;
+}
+
+.project_description h3 {
+    color: #0e6daf;
+    margin-top: 0;
+}
+
+.project_icon_social i {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    padding-top: 13px;
 }
 
 section#bride_cum {
