@@ -16,17 +16,16 @@ As we navigate the digital revolution, Lunatech has pivoted to an **AI-First** d
 Our 2026 technology stack is built for performance and intelligence:
 - **Languages:** Python (AI/ML), Rust, Go, TypeScript.
 - **AI Frameworks:** LangChain, LlamaIndex, PyTorch, TensorFlow.
-- **Frontend:** Bootstrap 3 (Standardized), jQuery, FontAwesome 4.7.
+- **Frontend:** Tailwind CSS, Vanilla JS, PostHTML (Build System), FontAwesome 4.7.
 - **Cloud:** Docker, Kubernetes, Serverless Edge Computing.
 
 ## 📂 Repository Structure
 
-- `index.html`: Home page (AI-First overview).
-- `about.html`: Company history, Vision 2026, and Meet the Team.
-- `service.html`: Detailed breakdown of AI, Blockchain, and Web/Mobile services.
-- `portfolio.html`: Showcase of key projects including ChainEX and LunaAI.
-- `contact.html`: Business inquiries and location details.
-- `css/`, `js/`, `fonts/`, `images/`: Static assets.
+- `src/pages/`: Source HTML files for the website.
+- `src/templates/`: Reusable HTML components (Header, Footer).
+- `src/css/`: Tailwind source styles.
+- `index.html`, `about.html`, etc.: Compiled production-ready HTML files in the root directory.
+- `css/`, `js/`, `fonts/`, `images/`: Production static assets.
 
 ## 🌐 Hosting
 

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-lunatech-blue hover:bg-lunatech-dark text-white font-bold py-2 px-4 rounded transition duration-300;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300;
+  }
+
+  .nav-link-active {
+    @apply text-white border-b-2 border-white;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-lunatech-blue uppercase mb-6 text-center;
+  }
+
+  .insight-card {
+    @apply p-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-400;
+  }
+}

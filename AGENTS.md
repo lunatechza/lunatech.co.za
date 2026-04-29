@@ -8,9 +8,14 @@ Welcome, Agent. You are working on the Lunatech (Pty) Ltd. repository. This site
 - **Copyright:** Use the range "2014-2026".
 
 ## Technical Constraints
-- **Framework:** The current site uses **Bootstrap 3.3.5**. Do not use Bootstrap 4/5 classes unless a migration is explicitly requested.
+- **Framework:** The site uses **Tailwind CSS** for styling. Use utility classes for all design work.
+- **Build System:** We use **PostHTML** with the `posthtml-include` plugin to manage reusable components (header, footer).
+- **Source Files:**
+  - Source HTML files are in `src/pages/`.
+  - Reusable components are in `src/templates/`.
+  - CSS source is in `src/css/input.css`.
+- **Build Process:** Run `npm run build` to compile the CSS and HTML. The output is placed in the root directory for GitHub Pages compatibility.
 - **Icons:** We use **Font Awesome 4.7**. Newer icons (like `fa-robot` or `fa-brain`) are NOT available. Use semantic alternatives like `fa-terminal`, `fa-flask`, or `fa-magic`.
-- **CSS:** Modern AI accents are defined in `css/style.css` under the `/* 2026 AI Modern Accents */` section. Use classes like `.insight-box` for AI-themed content.
 
 ## Content Integrity
 - **Team:** Maintain the updated team list (Ryno, Sam, Jonathan, Stephen, Lyle, Nathan, Dustin, Duwayne).
