@@ -760,6 +760,10 @@ video {
   height: 0.5rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -1084,6 +1088,10 @@ video {
 .bg-lunatech-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(6 76 124 / var(--tw-bg-opacity, 1));
+}
+
+.bg-lunatech-dark\/30 {
+  background-color: rgb(6 76 124 / 0.3);
 }
 
 .bg-lunatech-dark\/60 {
