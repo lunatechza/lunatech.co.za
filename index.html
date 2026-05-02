@@ -57,6 +57,15 @@
     const isHidden = menu.classList.toggle('hidden');
     btn.setAttribute('aria-expanded', !isHidden);
   });
+
+  // Highlight active navigation link
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('nav-link-active');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
 </script>
 
 
