@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <title>Contact Us | Lunatech (Pty) Ltd.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,14 +49,6 @@
   </div>
 </header>
 
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    const isHidden = menu.classList.toggle('hidden');
-    btn.setAttribute('aria-expanded', !isHidden);
-  });
-</script>
 <script src="js/navigation.js"></script>
 
 
@@ -141,8 +135,8 @@
       <div>
         <h3 class="text-xl font-bold mb-6 uppercase">Legal</h3>
         <ul class="space-y-3">
-          <li><button onclick="document.getElementById('disclaimer-modal').classList.remove('hidden')" class="text-gray-400 hover:text-white transition duration-300">Disclaimer</button></li>
-          <li><button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</button></li>
+          <li><button id="disclaimer-open" class="text-gray-400 hover:text-white transition duration-300">Disclaimer</button></li>
+          <li><button id="privacy-open" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</button></li>
         </ul>
       </div>
 
@@ -168,7 +162,7 @@
   <div class="bg-white text-gray-800 max-w-4xl w-full rounded-lg shadow-2xl overflow-hidden">
     <div class="p-6 border-b flex justify-between items-center bg-gray-50">
       <h4 class="text-xl font-bold uppercase text-lunatech-blue">Disclaimer</h4>
-      <button onclick="document.getElementById('disclaimer-modal').classList.add('hidden')" class="text-3xl focus:ring-2 focus:ring-lunatech-blue focus:outline-none rounded-sm" aria-label="Close disclaimer modal">&times;</button>
+      <button class="close-modal text-3xl focus:ring-2 focus:ring-lunatech-blue focus:outline-none rounded-sm" aria-label="Close disclaimer modal">&times;</button>
     </div>
     <div class="p-8 max-h-[70vh] overflow-y-auto leading-relaxed text-sm">
       <p class="mb-4"><span class="font-bold">Lunatech (Pty) Ltd.</span> (herein referred to as "Lunatech") does not represent or endorse the accuracy or reliability of any of the information, content, or advertisements (collectively, the "Materials") contained on, distributed through, or linked, downloaded, or accessed from any of the services contained on this Web site (the "Service"), nor the quality of any products, information, or other materials displayed, purchased, or obtained by you as a result of an advertisement or any other information or offer in or in connection with the Service (the "Products"). You hereby acknowledge that any reliance upon any Materials shall be at your sole risk. Lunatech reserves the right, in its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the Service or the Materials.</p>
@@ -176,7 +170,7 @@
       <p>Lunatech makes no representations concerning any endeavor to review the content of sites linked to this site or any of the Materials, and so Lunatech isn't responsible for the accuracy, copyright compliance, legality, or decency of material contained in sites listed in the directory or in the Materials.</p>
     </div>
     <div class="p-6 border-t bg-gray-50 text-right">
-      <button onclick="document.getElementById('disclaimer-modal').classList.add('hidden')" class="btn-primary">Close</button>
+      <button class="close-modal btn-primary">Close</button>
     </div>
   </div>
 </div>
@@ -185,7 +179,7 @@
   <div class="bg-white text-gray-800 max-w-4xl w-full rounded-lg shadow-2xl overflow-hidden">
     <div class="p-6 border-b flex justify-between items-center bg-gray-50">
       <h4 class="text-xl font-bold uppercase text-lunatech-blue">Privacy Policy</h4>
-      <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="text-3xl focus:ring-2 focus:ring-lunatech-blue focus:outline-none rounded-sm" aria-label="Close privacy policy modal">&times;</button>
+      <button class="close-modal text-3xl focus:ring-2 focus:ring-lunatech-blue focus:outline-none rounded-sm" aria-label="Close privacy policy modal">&times;</button>
     </div>
     <div class="p-8 max-h-[70vh] overflow-y-auto leading-relaxed text-sm">
       <h5 class="text-base font-bold mb-2 uppercase">Your Privacy</h5>
@@ -196,7 +190,7 @@
       <p>Should you have any questions or feedback related to our Privacy Policy, please email us at: <a href="mailto:contact@lunatech.co.za" class="text-lunatech-blue hover:underline">contact@lunatech.co.za</a>.</p>
     </div>
     <div class="p-6 border-t bg-gray-50 text-right">
-      <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="btn-primary">Close</button>
+      <button class="close-modal btn-primary">Close</button>
     </div>
   </div>
 </div>
