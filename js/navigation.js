@@ -48,4 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.classList.add('hidden');
     }
   });
+
+  // Character counter for contact form
+  const messageArea = document.getElementById('message');
+  const charCounter = document.getElementById('char-counter');
+  if (messageArea && charCounter) {
+    messageArea.addEventListener('input', () => {
+      const count = messageArea.value.length;
+      const maxLength = messageArea.getAttribute('maxlength') || 2000;
+      charCounter.textContent = `${count} / ${maxLength} characters`;
+
+      if (count > 1900) {
+        charCounter.classList.remove('text-gray-400');
+        charCounter.classList.add('text-red-500');
+      } else {
+        charCounter.classList.remove('text-red-500');
+        charCounter.classList.add('text-gray-400');
+      }
+    });
+  }
 });
