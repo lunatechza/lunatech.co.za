@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
     <link rel="preload" as="image" href="images/logo.png">
+    <!--
+      ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
+      Impact: Ensures the critical team image is prioritized, reducing LCP for the About page.
+    -->
+    <link rel="preload" as="image" href="images/aboutpng.png" fetchpriority="high">
 </head>
 <body class="font-['Montserrat'] text-gray-800 bg-white">
     <header class="fixed w-full z-50 bg-lunatech-dark shadow-lg">
@@ -77,7 +82,11 @@
                     <p class="text-lg text-gray-600 leading-relaxed">We work hard but have fun doing so. Our philosophy is built on the belief that an AI-augmented workplace results in inspired, creative, and efficient employees.</p>
                 </div>
                 <div class="lg:w-1/2">
-                    <img src="images/aboutpng.png" alt="Team Working" class="rounded-2xl shadow-2xl" width="945" height="601" loading="lazy">
+                    <!--
+                      ⚡ Bolt Optimization: Removed loading="lazy" and added fetchpriority="high".
+                      Above-the-fold content should never be lazy-loaded as it delays visual completion.
+                    -->
+                    <img src="images/aboutpng.png" alt="Team Working" class="rounded-2xl shadow-2xl" width="945" height="601" fetchpriority="high">
                 </div>
             </div>
         </div>
