@@ -7,3 +7,7 @@
 ## 2026-05-03 - [Google Fonts Optimization & Purge Prevention]
 **Learning:** Migrating to Google Fonts CSS2 API with preconnect hints improves LCP. However, when pruning unused font weights or CSS classes, ensure that JavaScript-driven styles (like active nav links) are included in the Tailwind 'content' path to prevent accidental purging.
 **Action:** Always check tailwind.config.js and verify that all source files (HTML, JS, Templates) are scanned for utility classes.
+
+## 2026-05-04 - [Critical Path & Verification Discipline]
+**Learning:** Preloading the LCP element (`slider.png`) with `fetchpriority="high"` and providing explicit dimensions (235x57) for the site logo effectively optimizes Core Web Vitals. However, verification workflows involving Playwright can generate large binary artifacts (screenshots) that must be manually cleaned up to avoid repository bloat.
+**Action:** Delete all media artifacts and temporary verification scripts before staging changes. Ensure optimizations are applied to `src/` templates to propagate correctly through the build pipeline.
