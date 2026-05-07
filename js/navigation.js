@@ -48,4 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.classList.add('hidden');
     }
   });
+
+  // Character counter for contact form
+  const msg = document.getElementById('message'), count = document.getElementById('message-char-count');
+  if (msg && count) {
+    msg.addEventListener('input', () => {
+      const len = msg.value.length, max = msg.maxLength || 2000;
+      count.textContent = `${len} / ${max}`;
+      count.classList.toggle('text-red-500', len > max * 0.95);
+      count.classList.toggle('text-gray-400', len <= max * 0.95);
+    });
+  }
 });
