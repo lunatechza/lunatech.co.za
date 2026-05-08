@@ -11,9 +11,6 @@
     @apply text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300;
   }
 
-  .nav-link-active {
-    @apply text-white border-b-2 border-white;
-  }
 
   .section-title {
     @apply text-3xl font-bold text-lunatech-blue uppercase mb-6 text-center;
