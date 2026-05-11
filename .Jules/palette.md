@@ -5,3 +5,7 @@
 ## 2026-02-18 - [Dynamic State Indicators for Static Sites]
 **Learning:** In static sites generated from common templates, the lack of "active" navigation states creates a disjointed UX and poor accessibility.
 **Action:** Use lightweight client-side JS to inject `aria-current="page"` and toggle "active" classes based on `window.location.pathname` to provide immediate, accessible feedback.
+
+## 2026-05-11 - [Feedback-rich and Accessible Contact Forms]
+**Learning:** Contact forms are critical conversion points. Moving from placeholder-only inputs to semantic <label> elements significantly improves accessibility for screen readers. Adding real-time feedback like character counters with visual warning states (e.g., at 95% limit) reduces user frustration and prevents silent submission failures.
+**Action:** Always use semantic <label> elements for form inputs and provide real-time character count feedback for textareas with length constraints.
