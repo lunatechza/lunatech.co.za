@@ -106,16 +106,34 @@
 
                 <!-- Contact Form -->
                 <div class="bg-gray-50 p-12 rounded-3xl border border-gray-100 shadow-inner">
-                    <h3 class="text-2xl font-bold text-lunatech-blue uppercase mb-8 tracking-widest">Send a Message</h3>
+                    <h3 id="contact-title" class="text-2xl font-bold text-lunatech-blue uppercase mb-8 tracking-widest">Send a Message</h3>
                     <!-- Enhanced contact form with security-focused validation and length limits -->
-                    <form action="#" method="POST" class="space-y-6">
+                    <form action="#" method="POST" class="space-y-6" aria-labelledby="contact-title">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="firstname" placeholder="First Name" required="" maxlength="50" autocomplete="given-name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
-                            <input type="text" name="lastname" placeholder="Last Name" required="" maxlength="50" autocomplete="family-name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                            <div class="space-y-2">
+                                <label for="firstname" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">First Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="firstname" name="firstname" placeholder="First Name" required="" maxlength="50" autocomplete="given-name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="lastname" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Last Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required="" maxlength="50" autocomplete="family-name" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                            </div>
                         </div>
-                        <input type="email" name="email" placeholder="Email Address" required="" maxlength="100" autocomplete="email" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
-                        <input type="text" name="subject" placeholder="Subject" required="" maxlength="150" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
-                        <textarea name="message" placeholder="Your Message" rows="6" required="" maxlength="2000" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300"></textarea>
+                        <div class="space-y-2">
+                            <label for="email" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Email Address" required="" maxlength="100" autocomplete="email" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="subject" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Subject <span class="text-red-500">*</span></label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required="" maxlength="150" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="message" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Your Message <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="6" required="" maxlength="2000" class="w-full px-6 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-lunatech-blue transition duration-300"></textarea>
+                            <div class="text-right px-2">
+                                <span id="char-counter" class="text-xs font-medium text-gray-400" aria-live="polite">0 / 2000 characters</span>
+                            </div>
+                        </div>
                         <button type="submit" class="w-full py-5 bg-lunatech-blue text-white font-black uppercase tracking-[0.2em] rounded-xl hover:bg-lunatech-dark transition duration-500 shadow-lg">Submit Message</button>
                     </form>
                 </div>
