@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
     <link rel="preload" as="image" href="images/logo.png">
+    <!--
+      ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
+      Impact: Reduces Largest Contentful Paint (LCP) by ensuring the browser discovers
+      and prioritizes the 1.7MB hero background image before other non-critical assets.
+    -->
+    <link rel="preload" as="image" href="images/slider.png" fetchpriority="high">
 </head>
 
 <body class="font-['Montserrat'] text-gray-800 bg-white">
@@ -25,6 +31,10 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
+            <!--
+              ⚡ Bolt Optimization: Added fetchpriority="high" and ensured no loading="lazy" (default).
+              Hero images should always be prioritized as they are the most likely LCP candidates.
+            -->
             <img src="images/slider.png" alt="Hero Background" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
             <div class="absolute inset-0 bg-lunatech-dark/30"></div>
         </div>
