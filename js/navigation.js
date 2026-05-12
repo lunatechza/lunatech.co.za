@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const closeMobileMenu = () => {
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenuBtn.focus();
+    }
+  };
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       const isHidden = mobileMenu.classList.toggle('hidden');
@@ -20,12 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal interactions
+  let lastFocusedElement = null;
+
+  const closeModal = (modal) => {
+    if (modal && !modal.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+  };
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
     const modal = document.getElementById(modalId);
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
+        lastFocusedElement = document.activeElement;
         modal.classList.remove('hidden');
+        const closeBtn = modal.querySelector('.close-modal');
+        if (closeBtn) {
+          closeBtn.focus();
+        }
       });
     }
   };
@@ -36,16 +61,27 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
+      closeModal(modal);
     });
   });
 
   // Close modal on background click
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+  });
+
+  // Global escape key listener
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Close open modals
+      const openModal = document.querySelector('[id$="-modal"]:not(.hidden)');
+      if (openModal) {
+        closeModal(openModal);
+      }
+      // Close mobile menu
+      closeMobileMenu();
     }
   });
 
