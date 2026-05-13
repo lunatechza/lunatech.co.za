@@ -9,43 +9,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile menu toggle
+  // Overlay management (Menu & Modals)
+  let lastFocusedElement;
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const closeOverlay = (overlay, trigger) => {
+    if (!overlay || overlay.classList.contains('hidden')) return;
+    overlay.classList.add('hidden');
+    (trigger || lastFocusedElement)?.focus();
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  };
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.toggle('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeOverlay(mobileMenu, mobileMenuBtn);
+      } else {
+        lastFocusedElement = mobileMenuBtn;
+        mobileMenu.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.querySelector('a')?.focus();
+      }
     });
   }
 
-  // Modal interactions
   const setupModal = (openBtnId, modalId) => {
-    const openBtn = document.getElementById(openBtnId);
-    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(openBtnId), modal = document.getElementById(modalId);
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
+        lastFocusedElement = openBtn;
         modal.classList.remove('hidden');
+        modal.querySelector('button, a, [tabindex="0"]')?.focus();
       });
     }
   };
-
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
-  document.querySelectorAll('.close-modal').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
-    });
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.close-modal')) closeOverlay(e.target.closest('[id$="-modal"]'));
+    if (e.target.id?.endsWith('-modal')) closeOverlay(e.target);
   });
 
-  // Close modal on background click
-  window.addEventListener('click', (e) => {
-    if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeOverlay(document.querySelector('[id$="-modal"]:not(.hidden)'));
+      closeOverlay(mobileMenu, mobileMenuBtn);
     }
   });
 
