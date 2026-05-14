@@ -20,13 +20,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal interactions
+  let lastFocusedElement = null;
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.classList.remove('hidden');
+    // Focus the first close button in the modal for immediate accessibility
+    const closeBtn = modal.querySelector('.close-modal');
+    if (closeBtn) {
+      closeBtn.focus();
+    }
+  };
+
+  const closeModal = (modal) => {
+    if (!modal || modal.classList.contains('hidden')) return;
+    modal.classList.add('hidden');
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+      lastFocusedElement = null;
+    }
+  };
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
     const modal = document.getElementById(modalId);
     if (openBtn && modal) {
-      openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-      });
+      openBtn.addEventListener('click', () => openModal(modal));
     }
   };
 
@@ -36,16 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
+      closeModal(modal);
     });
   });
 
   // Close modal on background click
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+  });
+
+  // Close modal on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const openModalElement = document.querySelector('[id$="-modal"]:not(.hidden)');
+      if (openModalElement) {
+        closeModal(openModalElement);
+      }
     }
   });
 
