@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com/maps/embed; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
     <title>Contact Us | Lunatech (Pty) Ltd.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +69,7 @@
                             width="100%" height="100%" class="border-0" allowfullscreen="" loading="lazy"
                             title="Google Maps Location"
                             sandbox="allow-scripts allow-same-origin allow-popups"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="strict-origin-when-cross-origin">
                         </iframe>
                     </div>
                 </div>
@@ -79,6 +79,12 @@
                     <h3 id="contact-title" class="text-2xl font-bold text-lunatech-blue uppercase mb-8 tracking-widest">Send a Message</h3>
                     <!-- Enhanced contact form with security-focused validation and length limits -->
                     <form action="#" method="POST" class="space-y-6" aria-labelledby="contact-title">
+                        <!-- Honeypot field to deter automated bots -->
+                        <div class="sr-only" aria-hidden="true">
+                            <label for="website">Leave this field empty if you are human</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="firstname" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">First Name <span class="text-red-500">*</span></label>
