@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
+    <!--
+      ⚡ Bolt Optimization: Preload the Font Awesome woff file and the logo.
+      Impact: Reduces render-blocking delay and prevents FOUT by ensuring the
+      essential icon font is available immediately.
+    -->
+    <link rel="preload" href="fonts/fontawesome-webfont862f.woff?v=4.1.0" as="font" type="font/woff" crossorigin="">
     <link rel="preload" as="image" href="images/logo.png">
     <!--
       ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
@@ -30,7 +36,11 @@
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div class="flex items-center">
       <a href="index.html" class="flex items-center">
-        <img src="images/logo.png" alt="Lunatech Logo" class="h-14 w-auto">
+        <!--
+          ⚡ Bolt Optimization: Added explicit width and height.
+          Impact: Prevents Cumulative Layout Shift (CLS) by reserving space for the logo.
+        -->
+        <img src="images/logo.png" alt="Lunatech Logo" class="h-14 w-auto" width="235" height="57">
       </a>
     </div>
 
@@ -60,7 +70,11 @@
   </div>
 </header>
 
-<script src="js/navigation.js"></script>
+<!--
+  ⚡ Bolt Optimization: Added defer attribute.
+  Impact: Prevents the script from blocking HTML parsing, improving Time to Interactive (TTI).
+-->
+<script src="js/navigation.js" defer=""></script>
 
 
     <!-- Hero Section -->
@@ -196,7 +210,11 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
       <div>
         <div class="mb-6 flex justify-center md:justify-start">
-          <img src="images/logo.png" alt="Lunatech Logo" class="h-16 w-auto">
+          <!--
+            ⚡ Bolt Optimization: Added explicit width and height.
+            Impact: Prevents Cumulative Layout Shift (CLS) by reserving space for the logo.
+          -->
+          <img src="images/logo.png" alt="Lunatech Logo" class="h-16 w-auto" width="235" height="57">
         </div>
         <h3 class="text-xl font-bold mb-4 italic tracking-widest uppercase">Design. CODE. AI.</h3>
         <p class="text-gray-400 text-sm">Empowering the digital landscape through intelligent innovation.</p>
