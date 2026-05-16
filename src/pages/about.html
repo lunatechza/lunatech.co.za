@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
+    <!--
+      ⚡ Bolt Optimization: Preload the Font Awesome woff file and the logo.
+      Impact: Reduces render-blocking delay and prevents FOUT by ensuring the
+      essential icon font is available immediately.
+    -->
+    <link rel="preload" href="fonts/fontawesome-webfont862f.woff?v=4.1.0" as="font" type="font/woff" crossorigin>
     <link rel="preload" as="image" href="images/logo.png">
     <!--
       ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
