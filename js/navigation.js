@@ -20,13 +20,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal interactions
+  let lastFocusedElement;
+
+  const openModal = (modalId, triggerElement) => {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      lastFocusedElement = triggerElement;
+      modal.classList.remove('hidden');
+      // Focus the first close button (&times;) for immediate dismissibility
+      const closeBtn = modal.querySelector('.close-modal');
+      if (closeBtn) closeBtn.focus();
+    }
+  };
+
+  const closeModal = (modal) => {
+    if (modal && !modal.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+  };
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
-    const modal = document.getElementById(modalId);
-    if (openBtn && modal) {
-      openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-      });
+    if (openBtn) {
+      openBtn.addEventListener('click', () => openModal(modalId, openBtn));
     }
   };
 
@@ -36,16 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
+      closeModal(modal);
     });
   });
 
-  // Close modal on background click
+  // Close modal on background click or Escape key
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const openModalElement = document.querySelector('[id$="-modal"]:not(.hidden)');
+      closeModal(openModalElement);
     }
   });
 
