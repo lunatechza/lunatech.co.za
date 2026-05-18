@@ -67,4 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Contact form honeypot validation
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        e.preventDefault();
+        console.warn('Bot detected via honeypot field.');
+        // Fail silently or show a generic success message to the bot
+        alert('Message sent successfully!');
+        contactForm.reset();
+      }
+    });
+  }
 });
