@@ -49,6 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Contact form submission handling (honeypot check)
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value) {
+        // If the honeypot field is filled, silently prevent submission
+        e.preventDefault();
+        console.warn('Spam detected. Submission blocked.');
+        // Optionally provide fake success feedback if needed for stealth
+      }
+    });
+  }
+
   // Character counter for contact form
   const messageArea = document.getElementById('message');
   const charCounter = document.getElementById('char-counter');
