@@ -12,21 +12,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const closeMobileMenu = () => {
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.add('md:hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    }
+  };
+
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('md:hidden');
       const isHidden = mobileMenu.classList.toggle('hidden');
       mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
     });
   }
 
   // Modal interactions
+  let lastFocusedElement = null;
+
+  const openModal = (modal) => {
+    lastFocusedElement = document.activeElement;
+    modal.classList.remove('hidden');
+    // Focus the first close button for keyboard users
+    const closeBtn = modal.querySelector('.close-modal');
+    closeBtn?.focus();
+  };
+
+  const closeModal = (modal) => {
+    modal.classList.add('hidden');
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  };
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
     const modal = document.getElementById(modalId);
     if (openBtn && modal) {
-      openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-      });
+      openBtn.addEventListener('click', () => openModal(modal));
     }
   };
 
@@ -37,15 +63,34 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
       if (modal) {
-        modal.classList.add('hidden');
+        closeModal(modal);
       }
     });
   });
 
-  // Close modal on background click
+  // Global interactions (Escape key and click-outside)
   window.addEventListener('click', (e) => {
+    // Close modal on background click
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+
+    // Close mobile menu on click outside
+    if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Close any open modal
+      const openModalElement = document.querySelector('[id$="-modal"]:not(.hidden)');
+      if (openModalElement) {
+        closeModal(openModalElement);
+      }
+
+      // Close mobile menu
+      closeMobileMenu();
     }
   });
 
