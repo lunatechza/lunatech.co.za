@@ -9,3 +9,7 @@
 ## 2026-02-19 - [Accessible Form Feedback]
 **Learning:** Placeholders are not a substitute for labels, as they disappear when the user starts typing and are often skipped by screen readers. Providing visible `<label>` elements and real-time character counters with `aria-live="polite"` significantly improves the UX for all users, especially on mobile and for those using assistive technology.
 **Action:** Always include associated `<label>` elements for inputs and use `aria-live` regions for dynamic feedback like character counts or validation messages.
+
+## 2026-02-21 - [Keyboard Accessibility: Skip to Content Link]
+**Learning:** For keyboard-only users, navigating through a long list of header links on every page load is tedious and creates a significant UX barrier. A "Skip to Content" link that is visually hidden by default but appears on focus provides an elegant, non-intrusive solution for power users and those using assistive technology.
+**Action:** Implement a "Skip to Content" link as the first focusable element in the header, ensuring it is styled to be visible only when focused and correctly targets the main content area.
