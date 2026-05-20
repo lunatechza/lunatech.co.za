@@ -67,4 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Honeypot validation for contact form
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value) {
+        e.preventDefault();
+        console.warn('Spam submission detected and blocked.');
+      }
+    });
+  }
 });
