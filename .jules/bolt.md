@@ -7,3 +7,7 @@
 ## 2026-05-03 - [Google Fonts Optimization & Purge Prevention]
 **Learning:** Migrating to Google Fonts CSS2 API with preconnect hints improves LCP. However, when pruning unused font weights or CSS classes, ensure that JavaScript-driven styles (like active nav links) are included in the Tailwind 'content' path to prevent accidental purging.
 **Action:** Always check tailwind.config.js and verify that all source files (HTML, JS, Templates) are scanned for utility classes.
+
+## 2026-05-20 - [Font & Script Optimization]
+**Learning:** Subsetting Font Awesome 4.1.0 directly into the Tailwind input CSS reduced HTTP requests and eliminated the need for a 21KB external stylesheet. Moving navigation scripts to the head with `defer` improves critical path performance by allowing parallel downloads without blocking parser.
+**Action:** Prioritize subsetting legacy icon fonts and using `defer` for non-critical JS on all pages.
