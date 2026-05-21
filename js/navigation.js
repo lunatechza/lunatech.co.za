@@ -67,4 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Contact form submission handling with honeypot validation
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        // Spam detected: block submission
+        e.preventDefault();
+        console.warn('Spam submission detected and blocked.');
+        // Silent fail or generic message to avoid tipping off bots
+        alert('Thank you for your message!');
+      }
+    });
+  }
 });
