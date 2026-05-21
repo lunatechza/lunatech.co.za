@@ -9,3 +9,7 @@
 ## 2026-02-19 - [Accessible Form Feedback]
 **Learning:** Placeholders are not a substitute for labels, as they disappear when the user starts typing and are often skipped by screen readers. Providing visible `<label>` elements and real-time character counters with `aria-live="polite"` significantly improves the UX for all users, especially on mobile and for those using assistive technology.
 **Action:** Always include associated `<label>` elements for inputs and use `aria-live` regions for dynamic feedback like character counts or validation messages.
+
+## 2026-05-21 - [Modal Accessibility & Focus Management]
+**Learning:** Simple modal implementations often suffer from "focus loss," where the focus remains on the background or is lost entirely when the modal closes. Implementing `role="dialog"`, `aria-modal="true"`, and manual focus trapping (or at least focus restoration) is critical for a predictable keyboard and screen reader experience.
+**Action:** Ensure all modals have appropriate ARIA roles and labels, automatically focus the first interactive element (like the close button) upon opening, and restore focus to the triggering element upon closing.
