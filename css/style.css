@@ -638,6 +638,18 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1609,9 +1621,65 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+.focus\:absolute:focus {
+  position: absolute;
+}
+
+.focus\:left-4:focus {
+  left: 1rem;
+}
+
+.focus\:top-4:focus {
+  top: 1rem;
+}
+
+.focus\:z-\[100\]:focus {
+  z-index: 100;
+}
+
+.focus\:rounded-lg:focus {
+  border-radius: 0.5rem;
+}
+
+.focus\:bg-lunatech-blue:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 109 175 / var(--tw-bg-opacity, 1));
+}
+
+.focus\:px-6:focus {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.focus\:py-3:focus {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.focus\:font-bold:focus {
+  font-weight: 700;
+}
+
 .focus\:text-white:focus {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.focus\:shadow-2xl:focus {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .focus\:outline-none:focus {
