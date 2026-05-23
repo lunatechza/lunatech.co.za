@@ -27,6 +27,9 @@
 <body class="font-['Montserrat'] text-gray-800 bg-white">
 
     <header class="fixed w-full z-50 bg-lunatech-dark shadow-lg">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-6 focus:py-3 focus:bg-lunatech-blue focus:text-white focus:font-bold focus:rounded-lg focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to main content
+  </a>
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
     <div class="flex items-center">
       <a href="index.html" class="flex items-center">
@@ -63,6 +66,7 @@
 <script src="js/navigation.js"></script>
 
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -75,7 +79,7 @@
         </div>
 
         <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter animated animate-fade-in-down">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter animated animate-fade-in-down">
                 Design. <span class="text-lunatech-accent">CODE.</span> AI.
             </h1>
             <p class="max-w-3xl mx-auto text-xl md:text-2xl font-light mb-12 animated animate-fade-in-up">
@@ -190,6 +194,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="bg-zinc-900 text-white py-16">
   <div class="container mx-auto px-6">
@@ -198,7 +203,7 @@
         <div class="mb-6 flex justify-center md:justify-start">
           <img src="images/logo.png" alt="Lunatech Logo" class="h-16 w-auto">
         </div>
-        <h3 class="text-xl font-bold mb-4 italic tracking-widest uppercase">Design. CODE. AI.</h3>
+        <h3 class="text-xl font-bold mb-4 italic tracking-widest">Design. CODE. AI.</h3>
         <p class="text-gray-400 text-sm">Empowering the digital landscape through intelligent innovation.</p>
       </div>
 
