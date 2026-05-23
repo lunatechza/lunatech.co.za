@@ -1549,6 +1549,111 @@ video {
   animation-name: zoomIn;
 }
 
+/*
+   * ⚡ Bolt Optimization: Subsetting Font Awesome 4.1.0.
+   * Only includes the 18 icons used across the site.
+   * Added font-display: swap to prevent render-blocking.
+   */
+
+@font-face {
+  font-family: 'FontAwesome';
+
+  src: url('../fonts/fontawesome-webfont862f.eot?v=4.1.0');
+
+  src: url('../fonts/fontawesome-webfontd41d.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+         url('../fonts/fontawesome-webfont862f.woff?v=4.1.0') format('woff'),
+         url('../fonts/fontawesome-webfont862f.ttf?v=4.1.0') format('truetype'),
+         url('../fonts/fontawesome-webfont862f.svg?v=4.1.0#fontawesomeregular') format('svg');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+.fa-user:before {
+  content: "\f007";
+}
+
+.fa-pencil:before {
+  content: "\f040";
+}
+
+.fa-map-marker:before {
+  content: "\f041";
+}
+
+.fa-twitter-square:before {
+  content: "\f081";
+}
+
+.fa-facebook-square:before {
+  content: "\f082";
+}
+
+.fa-linkedin-square:before {
+  content: "\f08c";
+}
+
+.fa-github-square:before {
+  content: "\f092";
+}
+
+.fa-users:before {
+  content: "\f0c0";
+}
+
+.fa-flask:before {
+  content: "\f0c3";
+}
+
+.fa-magic:before {
+  content: "\f0d0";
+}
+
+.fa-mobile:before {
+  content: "\f10b";
+}
+
+.fa-terminal:before {
+  content: "\f120";
+}
+
+.fa-code:before {
+  content: "\f121";
+}
+
+.fa-code-fork:before {
+  content: "\f126";
+}
+
+.fa-shield:before {
+  content: "\f132";
+}
+
+.fa-rocket:before {
+  content: "\f135";
+}
+
+.fa-cubes:before {
+  content: "\f1b3";
+}
+
 .hover\:-translate-y-3:hover {
   --tw-translate-y: -0.75rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
