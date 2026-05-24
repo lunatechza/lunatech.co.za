@@ -13,3 +13,7 @@
 ## 2026-05-23 - [Navigation Accessibility and Semantic Landmarks]
 **Learning:** For keyboard-only users, traversing repetitive navigation menus on every page load is frustrating and inefficient. Semantic landmarks like <main> are also critical for screen reader users to jump directly to the primary content of a page.
 **Action:** Implement a visually hidden "Skip to main content" link that becomes visible on focus at the top of every page, and ensure core content is wrapped in a <main> tag with a matching ID.
+
+## 2026-05-24 - [Comprehensive Interaction Management for Modals and Menus]
+**Learning:** For interactive overlays like modals and mobile menus in vanilla JS environments, accessibility and UX are significantly improved by combining three core behaviors: focus trapping/management (focusing the primary action on open, restoring focus on close), keyboard dismissibility (Escape key), and intuitive dismissal (clicking outside the active element).
+**Action:** Always implement a unified overlay dismissal strategy that handles both keyboard and mouse/touch "outside" events while maintaining focus consistency for assistive technologies.

@@ -13,9 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isHidden = mobileMenu.classList.toggle('hidden');
       mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+    });
+
+    // Close mobile menu on click outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -26,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
         modal.classList.remove('hidden');
+        // Accessibility: Focus the close button when modal opens
+        const closeBtn = modal.querySelector('.close-modal');
+        if (closeBtn) closeBtn.focus();
+
+        // Store the trigger element to restore focus later
+        modal._triggerElement = openBtn;
       });
     }
   };
@@ -33,19 +48,44 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
+  const closeModal = (modal) => {
+    if (modal) {
+      modal.classList.add('hidden');
+      // Accessibility: Restore focus to the trigger button
+      if (modal._triggerElement) {
+        modal._triggerElement.focus();
+      }
+    }
+  };
+
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
+      closeModal(modal);
     });
   });
 
   // Close modal on background click
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+  });
+
+  // Keyboard support: Escape key to close modals and mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Close any open modals
+      document.querySelectorAll('[id$="-modal"]:not(.hidden)').forEach(modal => {
+        closeModal(modal);
+      });
+
+      // Close mobile menu
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.focus();
+      }
     }
   });
 
