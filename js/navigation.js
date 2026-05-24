@@ -67,4 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Contact form submission handling with honeypot validation
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        // Honeypot violation detected: silently fail to avoid alerting the spam bot
+        console.warn('Honeypot field filled. Blocking submission.');
+        alert('Thank you for your message!');
+        contactForm.reset();
+        if (charCounter) charCounter.textContent = `0 / 2000 characters`;
+        return;
+      }
+
+      // Standard successful submission simulation (static site)
+      alert('Thank you for your message!');
+      contactForm.reset();
+      if (charCounter) charCounter.textContent = `0 / 2000 characters`;
+    });
+  }
 });

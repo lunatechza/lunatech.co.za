@@ -138,6 +138,13 @@
                                 <span id="char-counter" class="text-xs font-medium text-gray-400" aria-live="polite">0 / 2000 characters</span>
                             </div>
                         </div>
+
+                        <!-- Honeypot anti-spam field: visually hidden to users but lures spam bots -->
+                        <div class="sr-only" aria-hidden="true">
+                            <label for="website">Website (Leave blank)</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <button type="submit" class="w-full py-5 bg-lunatech-blue text-white font-black uppercase tracking-[0.2em] rounded-xl hover:bg-lunatech-dark transition duration-500 shadow-lg">Submit Message</button>
                     </form>
                 </div>
