@@ -13,3 +13,7 @@
 ## 2026-05-23 - [Navigation Accessibility and Semantic Landmarks]
 **Learning:** For keyboard-only users, traversing repetitive navigation menus on every page load is frustrating and inefficient. Semantic landmarks like <main> are also critical for screen reader users to jump directly to the primary content of a page.
 **Action:** Implement a visually hidden "Skip to main content" link that becomes visible on focus at the top of every page, and ensure core content is wrapped in a <main> tag with a matching ID.
+
+## 2026-05-24 - [Modal Focus Management and Keyboard Escape]
+**Learning:** Modals that do not manage focus or handle the Escape key create a "trap" for keyboard and screen reader users. Without proper focus management, users may lose their place in the document or be unable to close the dialog efficiently. Semantic ARIA roles (`dialog`, `aria-modal`) are also essential for screen readers to identify the interactive context correctly.
+**Action:** Always implement a focus management lifecycle for modals: capture the trigger element, focus the primary action (like a Close button) upon opening, and restore focus to the trigger upon closing. Additionally, provide a global listener for the `Escape` key and use appropriate ARIA landmarks.
