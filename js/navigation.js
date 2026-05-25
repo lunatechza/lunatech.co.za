@@ -67,4 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Honeypot validation for contact form
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value) {
+        e.preventDefault();
+        // Silently fail: show a fake success message to the bot without alert()
+        const successMsg = document.createElement('p');
+        successMsg.className = 'text-green-600 font-bold mt-4';
+        successMsg.textContent = 'Thank you for your message!';
+        contactForm.replaceWith(successMsg);
+      }
+    });
+  }
 });
