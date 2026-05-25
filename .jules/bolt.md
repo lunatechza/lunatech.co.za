@@ -7,3 +7,7 @@
 ## 2026-05-03 - [Google Fonts Optimization & Purge Prevention]
 **Learning:** Migrating to Google Fonts CSS2 API with preconnect hints improves LCP. However, when pruning unused font weights or CSS classes, ensure that JavaScript-driven styles (like active nav links) are included in the Tailwind 'content' path to prevent accidental purging.
 **Action:** Always check tailwind.config.js and verify that all source files (HTML, JS, Templates) are scanned for utility classes.
+
+## 2026-05-20 - [Critical Path Optimization & CLS Reduction]
+**Learning:** Static sites often suffer from CLS due to missing image dimensions and FOIT from late-loading fonts. Preloading critical fonts (`as="font"`) and using `defer` for navigation scripts ensures the DOM and text are ready before the first paint.
+**Action:** Always specify `width` and `height` on brand assets and use resource hints (`preload`, `fetchpriority`) for top-of-fold elements.
