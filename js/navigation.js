@@ -67,4 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Contact form submission with honeypot validation
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        // Honeypot field violation detected: block submission and fail silently
+        e.preventDefault();
+        contactForm.innerHTML = '<div class="p-8 text-center bg-white rounded-2xl shadow-inner border border-gray-100"><i class="fa fa-envelope text-4xl text-lunatech-blue mb-4"></i><h4 class="text-xl font-bold text-lunatech-blue uppercase mb-2">Thank you!</h4><p class="text-gray-600">Your message has been sent successfully.</p></div>';
+      }
+    });
+  }
 });
