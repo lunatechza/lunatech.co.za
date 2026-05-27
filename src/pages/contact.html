@@ -80,6 +80,11 @@
                     <h3 id="contact-title" class="text-2xl font-bold text-lunatech-blue uppercase mb-8 tracking-widest">Send a Message</h3>
                     <!-- Enhanced contact form with security-focused validation and length limits -->
                     <form action="#" method="POST" class="space-y-6" aria-labelledby="contact-title">
+                        <!-- Honeypot field to deter automated spam -->
+                        <div class="sr-only" aria-hidden="true">
+                            <label for="website_url">Website URL</label>
+                            <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label for="firstname" class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">First Name <span class="text-red-500">*</span></label>
