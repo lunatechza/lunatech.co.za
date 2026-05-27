@@ -13,3 +13,7 @@
 ## 2026-05-23 - [Navigation Accessibility and Semantic Landmarks]
 **Learning:** For keyboard-only users, traversing repetitive navigation menus on every page load is frustrating and inefficient. Semantic landmarks like <main> are also critical for screen reader users to jump directly to the primary content of a page.
 **Action:** Implement a visually hidden "Skip to main content" link that becomes visible on focus at the top of every page, and ensure core content is wrapped in a <main> tag with a matching ID.
+
+## 2026-05-24 - [Overlay Interaction and Focus Restoration]
+**Learning:** Users expect interactive overlays like modals and mobile menus to follow standard dismissal patterns: the Escape key for keyboard users and clicking outside the component for mouse users. Furthermore, failing to restore focus to the triggering element when an overlay closes creates a "focus loss" that disorients keyboard and screen reader users.
+**Action:** Implement global 'keydown' (Escape) and 'click' (outside) listeners for all overlays, and ensure the `lastFocusedElement` is stored and restored upon closing.
