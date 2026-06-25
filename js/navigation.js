@@ -20,12 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Modal interactions
+  let lastFocusedElement;
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
     const modal = document.getElementById(modalId);
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
+        lastFocusedElement = document.activeElement;
         modal.classList.remove('hidden');
+        // Focus the close button for immediate keyboard interaction
+        const closeBtn = modal.querySelector('.close-modal');
+        if (closeBtn) closeBtn.focus();
       });
     }
   };
@@ -33,19 +39,35 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
+  const closeModal = (modal) => {
+    if (modal) {
+      modal.classList.add('hidden');
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+  };
+
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
+      closeModal(modal);
     });
   });
 
-  // Close modal on background click
+  // Close modal on background click or Escape key
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
+      if (activeModal) {
+        closeModal(activeModal);
+      }
     }
   });
 
