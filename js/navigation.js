@@ -33,6 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
+  // Handle Escape key to close modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
+      if (activeModal) {
+        activeModal.classList.add('hidden');
+      }
+    }
+  });
+
   document.querySelectorAll('.close-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
@@ -49,9 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Character counter for contact form
+  // Character counter and honeypot validation for contact form
+  const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
   const messageArea = document.getElementById('message');
   const charCounter = document.getElementById('char-counter');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const honeypot = contactForm.querySelector('input[name="website_url"]');
+      if (honeypot && honeypot.value !== '') {
+        e.preventDefault();
+        alert('Message could not be sent.');
+      }
+    });
+  }
+
   if (messageArea && charCounter) {
     messageArea.addEventListener('input', () => {
       const count = messageArea.value.length;
