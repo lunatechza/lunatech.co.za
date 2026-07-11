@@ -3,165 +3,328 @@
 <head>
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
-    <title>About Us | Lunatech (Pty) Ltd.</title>
+    <title>About | Lunatech</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lunatech is a South African software powerhouse established in 2014, leading the charge in AI-driven development, Blockchain, and next-generation digital solutions for the 2026 landscape.">
+    <meta name="description" content="Learn about Lunatech's story, principles, and founder-led technical delivery team based in Jeffreys Bay, South Africa.">
     <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
-    <link rel="preload" as="image" href="images/logo.png">
-    <!--
-      ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
-      Impact: Ensures the critical team image is prioritized, reducing LCP for the About page.
-    -->
+    <link rel="preload" as="image" href="images/Lunatech-DK-Blue-Logo-Straight.png">
     <link rel="preload" as="image" href="images/aboutpng.png" fetchpriority="high">
 </head>
-<body class="font-['Montserrat'] text-gray-800 bg-white">
+
+<body class="font-body text-text-700 bg-canvas pt-20">
+
     <include src="header.html"></include>
 
     <main id="main-content">
-    <div class="pt-24 pb-12 bg-gray-50 border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-black text-lunatech-blue uppercase tracking-widest">About Us</h1>
-            <nav class="flex text-sm font-bold uppercase mt-4">
-                <a href="index.html" class="text-gray-400 hover:text-lunatech-blue">Home</a>
-                <span class="mx-2 text-gray-300">/</span>
-                <span class="text-lunatech-blue">About</span>
+    <!-- Breadcrumbs / Page Hero -->
+    <div class="py-12 bg-[#EEF2F8] border-b border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <nav class="flex text-xs font-bold uppercase tracking-wider space-x-2">
+                <a href="index.html" class="text-text-500 hover:text-brand-700">Home</a>
+                <span class="text-[#DCE3EE]">/</span>
+                <span class="text-brand-700">About</span>
             </nav>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#121B4B] font-display mt-4 leading-tight">
+                Serious software engineering, founded in 2014.
+            </h1>
+            <p class="text-[#687386] text-base md:text-lg font-normal mt-3 max-w-3xl leading-relaxed">
+                We are a goal-oriented software development company specializing in high-performance digital ecosystems, robust blockchain networks, and practical AI automation workflows.
+            </p>
         </div>
     </div>
 
-    <!-- Who We Are -->
-    <section class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-6">
-                    <h2 class="text-4xl font-bold text-lunatech-blue uppercase tracking-tight">Who We Are</h2>
-                    <div class="w-16 h-1 bg-lunatech-accent mb-8"></div>
-                    <p class="text-lg text-gray-600 leading-relaxed">Lunatech is a software development company founded in 2014. By 2026, we have emerged as a leader in AI-driven innovation and the implementation of first-of-its-kind intelligent software solutions.</p>
-                    <p class="text-lg text-gray-600 leading-relaxed">The team is situated in Jeffreys Bay, South Africa. Although we established ourselves in a sleepy surf town, our global impact is significant. We are involved in major AI and Fintech projects implemented with International partners from around the world.</p>
-                    <p class="text-lg text-gray-600 leading-relaxed">We work hard but have fun doing so. Our philosophy is built on the belief that an AI-augmented workplace results in inspired, creative, and efficient employees.</p>
+    <!-- Company Story Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#12A8B4]">Our Story</span>
+                    <h2 class="text-3xl font-extrabold text-brand-900 font-display">South African base, global delivery</h2>
+                    <div class="w-12 h-1 bg-[#2B3896] rounded"></div>
+                    <p class="text-base text-text-700 leading-relaxed">
+                        Lunatech was established in 2014 in Jeffreys Bay, South Africa. Since then, we have evolved from a highly focused local software workshop into an enterprise-facing engineering powerhouse.
+                    </p>
+                    <p class="text-base text-text-700 leading-relaxed">
+                        Although we operate from a beautiful coastal community, our reach is entirely global. We collaborate with international fintech platforms, sophisticated logistics networks, and enterprise partners to build reliable, high-throughput digital systems.
+                    </p>
+                    <p class="text-base text-text-700 leading-relaxed">
+                        We avoid generic hype. Instead, our team takes direct, end-to-end responsibility for the architecture, scaling, security, and ongoing operations of the intellectual property we construct.
+                    </p>
                 </div>
-                <div class="lg:w-1/2">
-                    <!--
-                      ⚡ Bolt Optimization: Removed loading="lazy" and added fetchpriority="high".
-                      Above-the-fold content should never be lazy-loaded as it delays visual completion.
-                    -->
-                    <img src="images/aboutpng.png" alt="Team Working" class="rounded-2xl shadow-2xl" width="945" height="601" fetchpriority="high">
+                <div class="lg:col-span-6">
+                    <img src="images/aboutpng.png" alt="Lunatech engineering team working together" class="rounded-2xl border border-border shadow-sm w-full" width="945" height="601" fetchpriority="high">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision Section -->
-    <section class="py-24 bg-lunatech-dark text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 order-2 lg:order-1">
-                    <img src="images/aboutas.png" alt="Vision 2026" class="rounded-2xl shadow-2xl opacity-90" width="945" height="595" loading="lazy">
+    <!-- Timeline / History Section -->
+    <section class="py-24 bg-[#EEF2F8] border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#2B3896]">Key Milestones</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">Our history</h2>
+                <div class="w-12 h-1 bg-[#12A8B4] mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Milestone 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xl font-extrabold text-brand-700 font-display">2014</span>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Company founding</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Lunatech is established in Jeffreys Bay, specializing in early custom web and mobile database platforms.
+                    </p>
                 </div>
-                <div class="lg:w-1/2 order-1 lg:order-2 space-y-6">
-                    <h2 class="text-4xl font-bold text-lunatech-accent uppercase tracking-tight">Vision 2026</h2>
-                    <div class="w-16 h-1 bg-white mb-8"></div>
-                    <p class="text-xl font-light leading-relaxed">Our core purpose is to architect software that is intelligent, user-centric, and outperforms the competition through AI optimization.</p>
-                    <p class="text-xl font-light leading-relaxed">We aim to deliver software that is visually stunning, exceptionally stable, and powered by the latest in machine learning. Every project brings its own set of challenges, and we solve them using the most advanced digital tools available in 2026.</p>
+
+                <!-- Milestone 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xl font-extrabold text-brand-700 font-display">2019</span>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Fintech & blockchain</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We partner with ChainEX to help re-architect and develop their high-frequency digital trading backend systems and custody networks.
+                    </p>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xl font-extrabold text-brand-700 font-display">2026</span>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">AI & automation</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Complete integration of AI-augmented development pipelines and the deployment of our proprietary LunaAI Multi-Agent orchestrators.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Principles Section -->
+    <section class="py-24 bg-white border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#2B3896]">Our Core Beliefs</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">Operating principles</h2>
+                <div class="w-12 h-1 bg-[#12A8B4] mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Principle 1 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-shield text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Build the right thing</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We spend time thoroughly understanding real operational constraints before deciding on architecture, ensuring we don't build unnecessary complexity.
+                    </p>
+                </div>
+
+                <!-- Principle 2 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-terminal text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Own the technical outcome</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Our engineering team takes full accountability from strategy and code structure all the way through continuous hosting and production monitoring.
+                    </p>
+                </div>
+
+                <!-- Principle 3 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-magic text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Automate repeatable work</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We programmatically eliminate manual, error-prone tasks. If an action is done more than twice, we write a workflow to handle it.
+                    </p>
+                </div>
+
+                <!-- Principle 4 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-cubes text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Keep systems understandable</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Clean code, modular styling, and structured API documentation mean your team (and ours) can easily scale the codebase for years.
+                    </p>
+                </div>
+
+                <!-- Principle 5 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-lock text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Protect trust and data</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        By avoiding unsafe integrations and enforcing zero-trust data access policies, we keep client financial, trade, and private data secure.
+                    </p>
+                </div>
+
+                <!-- Principle 6 -->
+                <div class="space-y-3">
+                    <div class="w-10 h-10 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-refresh text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-900 font-display">Improve continuously</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Technology changes, and so do we. We dedicate active R&D hours to benchmarking new languages, models, and security tooling weekly.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-lunatech-blue uppercase tracking-widest mb-4">Meet the Team</h2>
-            <div class="w-16 h-1 bg-lunatech-accent mx-auto mb-16"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <!-- Ryno -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Ryno Mathee</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Owner</p>
-                    <p class="text-gray-500 text-sm">Passionate about programming, R&D, and standardization.</p>
-                </div>
-                <!-- Sam -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Sam Mthuli</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Background in math and physics. Coincidentally got the same marks!</p>
-                </div>
-                <!-- Jonathan -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Jonathan Kleinhans</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Business Analyst</p>
-                    <p class="text-gray-500 text-sm">Qualified attorney. Likes philosophy and extreme sports.</p>
-                </div>
-                <!-- Stephen -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Stephen</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Passionate about building efficient and scalable software solutions.</p>
-                </div>
+    <section class="py-24 bg-[#EEF2F8] border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#2B3896]">The Team</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">Our leadership and engineers</h2>
+                <div class="w-12 h-1 bg-[#12A8B4] mx-auto rounded"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Ryno -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Ryno Mathee</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Owner / Principal Architect</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Over 15 years of technical leadership. Passionate about systems architecture, robust R&D, and coding standards.
+                    </p>
+                </div>
+
+                <!-- Sam -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Sam Mthuli</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Senior Developer</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        With a deep background in mathematics and physics, Sam constructs complex algorithms and trading data logic.
+                    </p>
+                </div>
+
+                <!-- Jonathan -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Jonathan Kleinhans</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Business Analyst</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        A qualified attorney with a passion for philosophy, Jonathan coordinates our compliance and requirements gathering.
+                    </p>
+                </div>
+
+                <!-- Stephen -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Stephen</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Senior Software Engineer</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Stephen builds highly efficient cloud infrastructure, database scaling pipelines, and backend APIs.
+                    </p>
+                </div>
+
                 <!-- Lyle -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Lyle</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Dedicated to creating intuitive and user-friendly applications.</p>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Lyle</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Frontend Developer</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Lyle specializes in responsive web performance, optimizing accessibility standards, and clean CSS layouts.
+                    </p>
                 </div>
+
                 <!-- Nathan -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Nathan</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Focusing on clean code and the latest web technologies.</p>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Nathan</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Full-Stack Engineer</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Nathan focuses on building modern vanilla JavaScript architectures and integrating robust server APIs.
+                    </p>
                 </div>
+
                 <!-- Dustin -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Dustin</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Enthusiastic about solving complex problems through technology.</p>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Dustin</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">Backend Systems Engineer</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Enthusiastic about concurrent programming patterns, databases, and microservices integration.
+                    </p>
                 </div>
+
                 <!-- Duwayne -->
-                <div class="group">
-                    <div class="w-48 h-48 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-user text-6xl text-gray-300 group-hover:text-white transition-colors duration-500"></i>
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <div class="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center text-[#2B3896]">
+                        <i class="fa fa-user text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-lunatech-blue">Duwayne</h3>
-                    <p class="text-lunatech-accent font-bold uppercase text-sm tracking-widest mb-4">Developer</p>
-                    <p class="text-gray-500 text-sm">Driven by a passion for continuous learning and innovation.</p>
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-bold text-brand-900 font-display">Duwayne</h4>
+                        <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider">DevOps Specialist</span>
+                    </div>
+                    <p class="text-xs text-text-500 leading-relaxed">
+                        Dedicated to automation, pipeline observability, cloud costs, and container orchestrations.
+                    </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-[1240px] mx-auto px-6 text-center space-y-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-extrabold font-display leading-[1.1]">Want to partner with our team?</h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+                Let’s understand your product roadmap and engineer the software your operations need.
+            </p>
+            <div class="pt-4">
+                <a href="contact.html" class="btn-primary">Meet the team</a>
             </div>
         </div>
     </section>
     </main>
 
     <include src="footer.html"></include>
+
 </body>
 </html>

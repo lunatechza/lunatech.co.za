@@ -3,156 +3,387 @@
 <head>
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
-    <title>Lunatech (Pty) Ltd. | Design. CODE. AI.</title>
+    <title>Lunatech | Intelligent software, built for the real world.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lunatech is a South African software powerhouse established in 2014, leading the charge in AI-driven development, Blockchain, and next-generation digital solutions for the 2026 landscape.">
+    <meta name="description" content="Lunatech designs, develops and operates high-performance platforms across AI, fintech, automation and digital infrastructure. South African base with global capability.">
     <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
-    <link rel="preload" as="image" href="images/logo.png">
-    <!--
-      ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
-      Impact: Reduces Largest Contentful Paint (LCP) by ensuring the browser discovers
-      and prioritizes the 1.7MB hero background image before other non-critical assets.
-    -->
+    <link rel="preload" as="image" href="images/Lunatech-DK-Blue-Logo-Straight.png">
     <link rel="preload" as="image" href="images/slider.png" fetchpriority="high">
 </head>
 
-<body class="font-['Montserrat'] text-gray-800 bg-white">
+<body class="home-page font-body text-text-700 bg-canvas">
 
     <include src="header.html"></include>
 
     <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <!--
-              ⚡ Bolt Optimization: Added fetchpriority="high" and ensured no loading="lazy" (default).
-              Hero images should always be prioritized as they are the most likely LCP candidates.
-            -->
-            <img src="images/slider.png" alt="Hero Background" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high">
-            <div class="absolute inset-0 bg-lunatech-dark/30"></div>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-900 pt-20">
+        <!-- Abstract orbital graphics -->
+        <div class="absolute inset-0 z-0 opacity-45 pointer-events-none">
+            <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" fill="none">
+                <circle cx="1100" cy="200" r="400" stroke="#4D61D8" stroke-width="1.5" stroke-dasharray="10 15" class="animate-pulse" />
+                <circle cx="1100" cy="200" r="250" stroke="#12A8B4" stroke-width="1" />
+                <path d="M-100 600 C 300 400, 800 900, 1600 500" stroke="#4D61D8" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 10" />
+            </svg>
         </div>
 
-        <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter animated animate-fade-in-down">
-                Design. <span class="text-lunatech-accent">CODE.</span> AI.
-            </h1>
-            <p class="max-w-3xl mx-auto text-xl md:text-2xl font-light mb-12 animated animate-fade-in-up">
-                Leading the charge in AI-driven development and next-generation digital ecosystems for the 2026 landscape.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6 animated animate-zoom-in">
-                <a href="service.html" class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-lunatech-blue transition duration-300 uppercase tracking-widest">Our Services</a>
-                <a href="portfolio.html" class="px-10 py-4 bg-lunatech-blue border-2 border-lunatech-blue text-white font-bold rounded-lg hover:bg-lunatech-dark hover:border-lunatech-dark transition duration-300 uppercase tracking-widest">Our Work</a>
+        <div class="absolute inset-0 z-0">
+            <img src="images/slider.png" alt="Hero Background" class="w-full h-full object-cover mix-blend-overlay opacity-30" width="1920" height="1080" fetchpriority="high">
+        </div>
+
+        <div class="relative z-10 max-w-[1240px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full py-12">
+            <div class="lg:col-span-7 space-y-8 text-white">
+                <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#12A8B4]">DESIGN · CODE · AI</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight font-display text-white leading-[1.1] animated animate-fade-in-down">
+                    Intelligent software,<br>built for the real world.
+                </h1>
+                <p class="text-lg md:text-xl font-normal text-slate-300 leading-relaxed max-w-2xl animated animate-fade-in-up">
+                    Lunatech designs, develops and operates high-performance platforms across AI, fintech, automation and digital infrastructure.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 animated animate-zoom-in">
+                    <a href="contact.html" class="btn-primary text-center">Start a project</a>
+                    <a href="portfolio.html" class="btn-secondary !text-white !border-white/20 hover:!bg-white/10 text-center">View our work</a>
+                </div>
+            </div>
+
+            <!-- Visual Interface panel -->
+            <div class="lg:col-span-5 hidden lg:block">
+                <div class="bg-[#121B4B]/80 backdrop-blur-md rounded-2xl border border-brand-500/20 shadow-lg p-6 space-y-6">
+                    <div class="flex justify-between items-center border-b border-brand-500/10 pb-4">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-xs font-mono text-brand-500">lunatech_system_node_01</span>
+                    </div>
+                    <div class="space-y-3 font-mono text-xs text-[#12A8B4]">
+                        <p class="text-white/60">// Initializing intelligent workflows...</p>
+                        <p class="text-white/80">> Loading LLM Agent Orchestrator</p>
+                        <p class="text-green-400">> System status: OPERATIONAL (100%)</p>
+                        <div class="p-4 bg-brand-900/50 rounded border border-[#DCE3EE]/10 space-y-2 mt-4">
+                            <div class="flex justify-between text-white/90 text-[10px]">
+                                <span>RAG PIPELINE ACCURACY</span>
+                                <span class="text-[#12A8B4]">98.4%</span>
+                            </div>
+                            <div class="w-full bg-[#121B4B] rounded-full h-1.5">
+                                <div class="bg-[#2B3896] h-1.5 rounded-full" style="width: 98.4%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision 2026 Intro -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
+    <!-- Credibility Strip -->
+    <section class="bg-white border-y border-border py-8">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-border">
+                <div class="pt-4 md:pt-0">
+                    <p class="text-3xl font-extrabold text-brand-700 font-display">2014</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-text-500 mt-1">Founded</p>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <p class="text-3xl font-extrabold text-brand-700 font-display">100%</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-text-500 mt-1">Founder-led Delivery</p>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <p class="text-3xl font-extrabold text-brand-700 font-display">Global</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-text-500 mt-1">SA Team, Global Partners</p>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <p class="text-3xl font-extrabold text-brand-700 font-display">Full-Stack</p>
+                    <p class="text-xs font-bold uppercase tracking-wider text-text-500 mt-1">Product & Cloud Ops</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Build Section -->
+    <section class="py-24 bg-canvas">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Core Capabilities</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">What we build</h2>
+                <div class="w-12 h-1 bg-accent-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Capability 1 -->
+                <div class="bg-white p-10 rounded-2xl border border-border hover:shadow-md transition duration-300 space-y-6">
+                    <div class="w-12 h-12 bg-canvas rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 font-display">Product engineering</h3>
+                    <p class="text-text-700 leading-relaxed">
+                        High-performance web and mobile applications engineered to scale. We take deep technical ownership of your core SaaS and digital platforms from wireframe to production.
+                    </p>
+                    <ul class="space-y-2 text-sm text-text-500">
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Custom SaaS architectures & API frameworks</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Robust web apps using modern, clean frontends</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Legacy system modernisation</li>
+                    </ul>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="bg-white p-10 rounded-2xl border border-border hover:shadow-md transition duration-300 space-y-6">
+                    <div class="w-12 h-12 bg-canvas rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-magic text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 font-display">AI and automation</h3>
+                    <p class="text-text-700 leading-relaxed">
+                        Practical implementation of intelligent agents and automated workflows. We integrate machine learning to solve repetitive operational tasks and augment human execution.
+                    </p>
+                    <ul class="space-y-2 text-sm text-text-500">
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Autonomous AI agent workflows & pipelines</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Knowledge graphs and retrieval systems (RAG)</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Integrated provider API & guardrail policies</li>
+                    </ul>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="bg-white p-10 rounded-2xl border border-border hover:shadow-md transition duration-300 space-y-6">
+                    <div class="w-12 h-12 bg-canvas rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-cubes text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 font-display">Fintech and blockchain</h3>
+                    <p class="text-text-700 leading-relaxed">
+                        Highly secure, compliant systems for digital assets, trading, and transactions. We build trading execution backends and custom ledger architectures.
+                    </p>
+                    <ul class="space-y-2 text-sm text-text-500">
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Exchange & brokerage infrastructure engineering</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Payment gateway & stablecoin flow integration</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Multi-party custody systems and API design</li>
+                    </ul>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="bg-white p-10 rounded-2xl border border-border hover:shadow-md transition duration-300 space-y-6">
+                    <div class="w-12 h-12 bg-canvas rounded-xl flex items-center justify-center text-brand-700">
+                        <i class="fa fa-terminal text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-900 font-display">Cloud, integration and infrastructure</h3>
+                    <p class="text-text-700 leading-relaxed">
+                        Architecting reliable, automated cloud systems. We handle complete event-driven data pipelines and complex third-party system integrations.
+                    </p>
+                    <ul class="space-y-2 text-sm text-text-500">
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Secure cloud architecture (AWS, GCP, Azure)</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Event-driven microservices & robust integrations</li>
+                        <li class="flex items-center"><i class="fa fa-circle text-accent-500 text-[6px] mr-2"></i> Automated DevOps, CI/CD, and serverless edge deploy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work Section -->
+    <section class="py-24 bg-white border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Evidence of Delivery</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">Selected work</h2>
+                <div class="w-12 h-1 bg-accent-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Case study 1 -->
+                <div class="bg-canvas rounded-2xl border border-border overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="p-8 bg-[#EEF2F8] border-b border-border flex justify-center items-center h-48">
+                        <img src="images/chain.png" alt="ChainEX" class="max-h-16 w-auto" loading="lazy">
+                    </div>
+                    <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500 font-mono">FINTECH & BLOCKCHAIN</span>
+                            <h3 class="text-xl font-bold text-brand-900 font-display">ChainEX</h3>
+                            <p class="text-sm text-text-700 line-clamp-3">
+                                High-performance cryptocurrency trading platform. Lunatech designed and built secure trading execution backends, API integrations, and robust custody architecture.
+                            </p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="portfolio.html" class="text-brand-700 hover:text-brand-500 font-semibold text-sm inline-flex items-center">
+                                View case study <i class="fa fa-arrow-right text-xs ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case study 2 -->
+                <div class="bg-canvas rounded-2xl border border-border overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="p-8 bg-[#EEF2F8] border-b border-border flex justify-center items-center h-48">
+                        <img src="images/vektoriq-logo.jpg" alt="VektorIQ" class="max-h-24 w-auto rounded-lg" loading="lazy">
+                    </div>
+                    <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500 font-mono">GEOSPATIAL & AUTOMATION</span>
+                            <h3 class="text-xl font-bold text-brand-900 font-display">VektorIQ</h3>
+                            <p class="text-sm text-text-700 line-clamp-3">
+                                Drone mapping and municipal land intelligence. Developed the geospatial processing pipeline, automated terrain modeling, and SANS-compliant data verification platforms.
+                            </p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="portfolio.html" class="text-brand-700 hover:text-brand-500 font-semibold text-sm inline-flex items-center">
+                                View case study <i class="fa fa-arrow-right text-xs ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case study 3 -->
+                <div class="bg-canvas rounded-2xl border border-border overflow-hidden hover:shadow-md transition duration-300 flex flex-col">
+                    <div class="p-8 bg-[#121B4B] border-b border-border flex justify-center items-center h-48">
+                        <div class="text-center">
+                            <i class="fa fa-magic text-4xl text-accent-500 mb-2"></i>
+                            <p class="text-white font-mono text-sm tracking-wider">LUNAAI FRAMEWORK</p>
+                        </div>
+                    </div>
+                    <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500 font-mono">AI WORKFLOWS</span>
+                            <h3 class="text-xl font-bold text-brand-900 font-display">LunaAI Orchestrator</h3>
+                            <p class="text-sm text-text-700 line-clamp-3">
+                                Proprietary system integration framework enabling multi-agent execution, automatic recovery, and robust RAG architectures over complex enterprise datasets.
+                            </p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="portfolio.html" class="text-brand-700 hover:text-brand-500 font-semibold text-sm inline-flex items-center">
+                                View case study <i class="fa fa-arrow-right text-xs ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="py-24 bg-canvas border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Our Methodology</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display">How we work</h2>
+                <div class="w-12 h-1 bg-accent-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="space-y-4 relative">
+                    <div class="text-5xl font-black text-[#DCE3EE] font-display">01</div>
+                    <h3 class="text-lg font-bold text-[#121B4B] font-display">Understand</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We map the precise problem boundaries, business success metrics, and operational constraints before writing any code.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="space-y-4 relative">
+                    <div class="text-5xl font-black text-[#DCE3EE] font-display">02</div>
+                    <h3 class="text-lg font-bold text-[#121B4B] font-display">Architect</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We build highly scalable system diagrams, choosing secure data paths and stable technology patterns mapped to real-world scale.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="space-y-4 relative">
+                    <div class="text-5xl font-black text-[#DCE3EE] font-display">03</div>
+                    <h3 class="text-lg font-bold text-[#121B4B] font-display">Build</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Using disciplined, clean-code practices combined with AI-augmented tools, we ship highly robust systems with immediate automated tests.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="space-y-4 relative">
+                    <div class="text-5xl font-black text-[#DCE3EE] font-display">04</div>
+                    <h3 class="text-lg font-bold text-[#121B4B] font-display">Operate</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        We remain technically accountable, running cloud infrastructure with continuous monitoring, auto-scaling, and secure optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Lunatech Section -->
+    <section class="py-24 bg-white border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
-                    <h2 class="text-4xl md:text-5xl font-black text-lunatech-blue leading-tight uppercase">
-                        The 2026 <br>Digital Powerhouse
-                    </h2>
-                    <div class="w-20 h-2 bg-lunatech-accent"></div>
-                    <p class="text-lg leading-relaxed text-gray-600">
-                        Lunatech is a dynamic software development powerhouse specialising in AI-driven solutions, Blockchain technology, and high-performance digital ecosystems.
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Why Lunatech</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-900 font-display leading-[1.15]">
+                            A serious tech company focused on delivery.
+                        </h2>
+                    </div>
+                    <p class="text-text-700 leading-relaxed">
+                        We don't sell generic templates or slide-only consulting. We exist to design, build, and operate actual production systems that work securely at scale.
                     </p>
-                    <p class="text-lg leading-relaxed text-gray-600">
-                        By 2026, we have fully integrated AI into our development lifecycle, leveraging advanced agents and LLMs to deliver software at unprecedented speed and quality.
+                    <p class="text-text-700 leading-relaxed">
+                        Based in Jeffreys Bay with global capability, we partner with sophisticated engineering teams and financial institutions to solve actual workflow and product engineering bottlenecks.
                     </p>
-                    <a href="about.html" class="inline-block font-bold text-lunatech-blue border-b-2 border-lunatech-blue pb-1 hover:text-lunatech-accent hover:border-lunatech-accent transition duration-300">Learn More About Us &rarr;</a>
+                    <div>
+                        <a href="about.html" class="text-brand-700 hover:text-brand-500 font-bold inline-flex items-center">
+                            Meet our leadership team <i class="fa fa-arrow-right text-xs ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="p-8 bg-gray-50 rounded-xl text-center border-t-4 border-lunatech-blue shadow-sm hover:shadow-lg transition-all duration-300">
-                        <i class="fa fa-cubes text-4xl text-lunatech-blue mb-4"></i>
-                        <h3 class="font-bold uppercase text-sm tracking-widest">Blockchain</h3>
+
+                <div class="bg-canvas border border-border p-10 rounded-2xl space-y-8">
+                    <!-- Feature 1 -->
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-border text-brand-700 flex-shrink-0">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-900 font-display">Senior technical ownership</h3>
+                            <p class="text-sm text-text-500 mt-1">Our founders and lead engineers remain directly involved in planning and writing your system's critical paths.</p>
+                        </div>
                     </div>
-                    <div class="p-8 bg-gray-50 rounded-xl text-center border-t-4 border-lunatech-accent shadow-sm hover:shadow-lg transition-all duration-300">
-                        <i class="fa fa-magic text-4xl text-lunatech-accent mb-4"></i>
-                        <h3 class="font-bold uppercase text-sm tracking-widest text-lunatech-accent">AI & Automation</h3>
+
+                    <!-- Feature 2 -->
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-border text-brand-700 flex-shrink-0">
+                            <i class="fa fa-flask"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-900 font-display">Practical AI integration</h3>
+                            <p class="text-sm text-text-500 mt-1">We bypass the generic wrappers to deploy custom LLM reasoning, structured data parsing, and autonomous agents.</p>
+                        </div>
                     </div>
-                    <div class="p-8 bg-gray-50 rounded-xl text-center border-t-4 border-lunatech-blue shadow-sm hover:shadow-lg transition-all duration-300">
-                        <i class="fa fa-mobile text-4xl text-lunatech-blue mb-4"></i>
-                        <h3 class="font-bold uppercase text-sm tracking-widest">Mobile Development</h3>
-                    </div>
-                    <div class="p-8 bg-gray-50 rounded-xl text-center border-t-4 border-lunatech-accent shadow-sm hover:shadow-lg transition-all duration-300">
-                        <i class="fa fa-terminal text-4xl text-lunatech-accent mb-4"></i>
-                        <h3 class="font-bold uppercase text-sm tracking-widest text-lunatech-accent">Next-Gen DevOps</h3>
+
+                    <!-- Feature 3 -->
+                    <div class="flex gap-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-border text-brand-700 flex-shrink-0">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-900 font-display">Long-term platform thinking</h3>
+                            <p class="text-sm text-text-500 mt-1">We build for readability and ease of maintenance, ensuring your intellectual property remains clear and clean for years.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Insights Section -->
-    <section id="ai_insights" class="py-24 bg-gradient-to-b from-white to-sky-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-lunatech-blue uppercase mb-4 tracking-widest">2026 AI Insights & Milestones</h2>
-                <div class="flex justify-center space-x-2">
-                    <div class="w-2 h-2 rounded-full bg-lunatech-accent"></div>
-                    <div class="w-2 h-2 rounded-full bg-lunatech-accent opacity-50"></div>
-                    <div class="w-2 h-2 rounded-full bg-lunatech-accent opacity-20"></div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="p-10 bg-white rounded-2xl border border-blue-100 shadow-xl hover:-translate-y-3 transition-all duration-500 group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-8 group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-terminal text-3xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-lunatech-blue">Autonomous Agents</h3>
-                    <p class="text-gray-600 leading-relaxed italic">Lunatech successfully deployed its 100th autonomous agent, streamlining complex supply chain logistics for our global partners.</p>
-                </div>
-
-                <div class="p-10 bg-white rounded-2xl border border-blue-100 shadow-xl hover:-translate-y-3 transition-all duration-500 group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-8 group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-flask text-3xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-lunatech-blue">LunaAI Framework</h3>
-                    <p class="text-gray-600 leading-relaxed italic">Our proprietary LunaAI orchestration framework enables seamless multi-agent collaboration and real-time LLM integration across enterprise systems.</p>
-                </div>
-
-                <div class="p-10 bg-white rounded-2xl border border-blue-100 shadow-xl hover:-translate-y-3 transition-all duration-500 group">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-8 group-hover:bg-lunatech-blue transition-colors duration-500">
-                        <i class="fa fa-code-fork text-3xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-lunatech-blue">Self-Healing Infrastructure</h3>
-                    <p class="text-gray-600 leading-relaxed italic">Implemented AI-driven self-healing DevOps pipelines, reducing production downtime to zero for all managed client clusters.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-black text-lunatech-blue uppercase mb-12 tracking-widest">Why choose Lunatech in 2026?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div class="space-y-4">
-                    <i class="fa fa-rocket text-5xl text-lunatech-accent"></i>
-                    <h3 class="text-xl font-bold uppercase">Driven</h3>
-                    <p class="text-gray-600">We are a goal oriented and driven company at the absolute forefront of technology.</p>
-                </div>
-                <div class="space-y-4">
-                    <i class="fa fa-users text-5xl text-lunatech-blue"></i>
-                    <h3 class="text-xl font-bold uppercase">Unity</h3>
-                    <p class="text-gray-600">We're united as one team, leveraging both human and artificial intelligence.</p>
-                </div>
-                <div class="space-y-4">
-                    <i class="fa fa-shield text-5xl text-lunatech-accent"></i>
-                    <h3 class="text-xl font-bold uppercase">Integrity</h3>
-                    <p class="text-gray-600">We uphold the highest standard of integrity in every intelligent solution we deploy.</p>
-                </div>
+    <!-- Final CTA -->
+    <section class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-[1240px] mx-auto px-6 text-center space-y-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-extrabold font-display leading-[1.1]">Have a serious system to build?</h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+                Let us understand the problem, the constraints and what success needs to look like.
+            </p>
+            <div class="pt-4">
+                <a href="contact.html" class="btn-primary">Discuss your project</a>
             </div>
         </div>
     </section>

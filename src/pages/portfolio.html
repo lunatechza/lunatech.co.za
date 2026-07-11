@@ -3,136 +3,181 @@
 <head>
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
-    <title>Portfolio | Lunatech (Pty) Ltd.</title>
+    <title>Work | Lunatech</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lunatech is a South African software powerhouse established in 2014, leading the charge in AI-driven development, Blockchain, and next-generation digital solutions for the 2026 landscape.">
+    <meta name="description" content="View Lunatech's work portfolio, featuring case studies on ChainEX, VektorIQ, and custom AI/Automation frameworks built for the real world.">
     <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
-    <link rel="preload" as="image" href="images/logo.png">
-    <!--
-      ⚡ Bolt Optimization: Preload the hero image with high fetch priority.
-      Impact: Minimizes time to first meaningful paint and LCP by prioritizing the primary brand asset.
-    -->
+    <link rel="preload" as="image" href="images/Lunatech-DK-Blue-Logo-Straight.png">
     <link rel="preload" as="image" href="images/chain.png" fetchpriority="high">
 </head>
-<body class="font-['Montserrat'] text-gray-800 bg-white">
+
+<body class="font-body text-text-700 bg-canvas pt-20">
+
     <include src="header.html"></include>
 
     <main id="main-content">
-    <div class="pt-24 pb-12 bg-gray-50 border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-black text-lunatech-blue uppercase tracking-widest">Our Portfolio</h1>
-            <nav class="flex text-sm font-bold uppercase mt-4">
-                <a href="index.html" class="text-gray-400 hover:text-lunatech-blue">Home</a>
-                <span class="mx-2 text-gray-300">/</span>
-                <span class="text-lunatech-blue">Portfolio</span>
+    <!-- Hero / Index Header -->
+    <div class="py-12 bg-[#EEF2F8] border-b border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <nav class="flex text-xs font-bold uppercase tracking-wider space-x-2">
+                <a href="index.html" class="text-text-500 hover:text-brand-700">Home</a>
+                <span class="text-[#DCE3EE]">/</span>
+                <span class="text-brand-700">Work</span>
             </nav>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#121B4B] font-display mt-4 leading-tight">
+                Evidence of technical delivery.
+            </h1>
+            <p class="text-[#687386] text-base md:text-lg font-normal mt-3 max-w-3xl leading-relaxed">
+                We believe in publishing qualitative, real-world proof of capability rather than generic marketing metrics. Explore how we solve complex system problems.
+            </p>
         </div>
     </div>
 
-    <!-- ChainEX Section -->
-    <section class="py-24 border-b border-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-1/2">
-                    <div class="p-12 bg-gray-50 rounded-3xl border border-gray-100 shadow-inner">
-                        <!--
-                          ⚡ Bolt Optimization: Replaced loading="lazy" with fetchpriority="high".
-                          Ensures the ChainEX wordmark is rendered immediately upon page load.
-                        -->
-                        <img src="images/chain.png" alt="ChainEX Logo" class="w-2/3 mx-auto" width="400" height="113" fetchpriority="high">
-                    </div>
+    <!-- Case Studies List -->
+    <section class="py-24 space-y-24">
+        <!-- Case Study 1: ChainEX -->
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 bg-white border border-border p-12 rounded-2xl flex justify-center items-center shadow-sm">
+                    <img src="images/chain.png" alt="ChainEX Trading Interface" class="max-h-24 w-auto" width="400" height="113" fetchpriority="high">
                 </div>
-                <div class="lg:w-1/2 space-y-8">
-                    <h2 class="text-4xl font-black text-lunatech-blue uppercase tracking-tighter">ChainEX</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed italic border-l-4 border-lunatech-accent pl-6">
-                        A premier Digital Asset Trading Platform for securely trading assets against real-time markets.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        ChainEX is a South African based digital asset exchange that provides a platform for users to buy, sell and trade various cryptocurrencies. Lunatech is proud to be a key partner in the ongoing development and technical evolution of the platform.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://chainex.io" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-lunatech-blue text-white font-bold rounded hover:bg-lunatech-dark transition duration-300 uppercase tracking-widest text-sm">Visit Website</a>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#12A8B4]">CASE STUDY · FINTECH & BLOCKCHAIN</span>
+                        <h2 class="text-3xl font-extrabold text-brand-900 font-display">ChainEX Trading Infrastructure</h2>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VektorIQ Section -->
-    <section class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
-                <div class="lg:w-1/2">
-                    <div class="p-12 bg-white rounded-3xl border border-gray-100 shadow-inner">
-                        <img src="images/vektoriq-logo.jpg" alt="VektorIQ Logo" class="w-2/3 mx-auto" width="400" height="400" loading="lazy">
+                    <p class="text-base text-text-700 leading-relaxed">
+                        ChainEX is a South African digital asset exchange that allows clients to trade, wallet, and monitor liquid markets securely. Lunatech operates as a core strategic engineering partner.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-text-500">
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Our Role:</span>
+                            <p class="mt-0.5">Secure trading execution backends, API gateway scaling, wallet automation, and transactional ledger audits.</p>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Key Technologies:</span>
+                            <p class="mt-0.5">Go, Rust, TypeScript, Docker, PostgreSQL, event-driven architecture.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="lg:w-1/2 space-y-8">
-                    <h2 class="text-4xl font-black text-lunatech-blue uppercase tracking-tighter">VektorIQ</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed italic border-l-4 border-lunatech-accent pl-6">
-                        Land Development Intelligence platform providing geospatial intelligence for developers and municipalities.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        VektorIQ accelerates land development through high-accuracy drone surveys, terrain analysis, and SANS 10400 compliant planning. Lunatech developed both the VektorIQ platform and the sophisticated geospatial technology that powers its automated land intelligence workflows.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://vektoriq.co.za" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-lunatech-blue text-white font-bold rounded hover:bg-lunatech-dark transition duration-300 uppercase tracking-widest text-sm">Visit Website</a>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://chainex.io" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm min-h-[44px] py-2 px-6">Visit Website</a>
+                        <span class="inline-flex items-center text-xs font-semibold text-text-500 border border-border rounded-lg px-4 py-2.5 bg-white">
+                            Status: OPERATIONAL IN PRODUCTION
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- LunaAI Framework -->
-    <section class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-1/2">
-                    <div class="w-full aspect-video bg-lunatech-dark rounded-3xl flex items-center justify-center text-lunatech-accent relative overflow-hidden group shadow-2xl">
-                         <i class="fa fa-magic text-[150px] opacity-20 group-hover:scale-110 transition-transform duration-700"></i>
-                         <div class="absolute inset-0 flex items-center justify-center">
-                            <h3 class="text-3xl font-black text-white uppercase tracking-[0.2em]">LunaAI Core</h3>
-                         </div>
+        <!-- Case Study 2: VektorIQ -->
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 lg:order-last bg-white border border-border p-12 rounded-2xl flex justify-center items-center shadow-sm">
+                    <img src="images/vektoriq-logo.jpg" alt="VektorIQ drone survey visual" class="max-h-32 w-auto rounded-xl" width="300" height="300" loading="lazy">
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#12A8B4]">CASE STUDY · GEOSPATIAL & AUTOMATION</span>
+                        <h2 class="text-3xl font-extrabold text-brand-900 font-display">VektorIQ Land Intelligence</h2>
+                    </div>
+                    <p class="text-base text-text-700 leading-relaxed">
+                        VektorIQ accelerates complex land development projects using automated high-accuracy drone surveys, terrain calculations, and SANS 10400 regulatory compliance pipelines.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-text-500">
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Our Role:</span>
+                            <p class="mt-0.5">Developed custom terrain mesh rendering pipelines, drone survey ingestion engines, and cloud-hosted geospatial workflow automation.</p>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Key Technologies:</span>
+                            <p class="mt-0.5">Python (GDAL/NumPy), Node.js, WebGL, AWS S3/ECS pipelines.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://vektoriq.co.za" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm min-h-[44px] py-2 px-6">Visit Website</a>
+                        <span class="inline-flex items-center text-xs font-semibold text-text-500 border border-border rounded-lg px-4 py-2.5 bg-white">
+                            Status: STABLE OPERATIONS
+                        </span>
                     </div>
                 </div>
-                <div class="lg:w-1/2 space-y-8">
-                    <h2 class="text-4xl font-black text-lunatech-blue uppercase tracking-tighter">LunaAI Framework</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed italic border-l-4 border-lunatech-accent pl-6">
-                        Our proprietary internal toolset designed to accelerate the development of autonomous agentic workflows.
+            </div>
+        </div>
+
+        <!-- Case Study 3: LunaAI Orchestrator -->
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 bg-brand-900 border border-brand-700/20 p-12 rounded-2xl flex flex-col justify-center items-center shadow-lg h-64 text-center">
+                    <i class="fa fa-magic text-5xl text-accent-500 mb-2"></i>
+                    <p class="text-white font-mono text-sm tracking-wider uppercase font-bold">LunaAI Engine</p>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#12A8B4]">CASE STUDY · AI SYSTEM ARCHITECTURE</span>
+                        <h2 class="text-3xl font-extrabold text-brand-900 font-display">LunaAI Multi-Agent Framework</h2>
+                    </div>
+                    <p class="text-base text-text-700 leading-relaxed">
+                        Our proprietary integration engine engineered to power secure, autonomous workflows. It provides a standard for orchestration across private data silos with human oversight safeguards.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        It enables rapid deployment of custom LLM-powered applications, featuring advanced retrieval-augmented generation (RAG) and self-healing code capabilities. It is the backbone of all our 2026 projects.
-                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-text-500">
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Our Role:</span>
+                            <p class="mt-0.5">Designed core execution cycle, self-healing exception rules, local file processing vectors, and multi-agent consensus protocols.</p>
+                        </div>
+                        <div>
+                            <span class="font-bold text-[#121B4B]">Key Technologies:</span>
+                            <p class="mt-0.5">Python (PyTorch), LangChain, LlamaIndex, IBM Plex Mono logs, Docker.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <span class="inline-flex items-center text-xs font-semibold text-text-500 border border-border rounded-lg px-4 py-2.5 bg-white">
+                            Status: ACTIVE PRODUCTION ORCHESTRATOR
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tech Stack Summary -->
-    <section class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 uppercase text-lunatech-blue tracking-widest">Our 2026 Tech Stack</h2>
-            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Python (PyTorch)</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Rust</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Go</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">LangChain</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Docker</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Kubernetes</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Vanilla JS</span>
-                <span class="px-6 py-2 bg-blue-50 text-lunatech-blue rounded-full font-bold uppercase tracking-widest text-xs border border-blue-100">Tailwind CSS</span>
+    <section class="py-24 bg-[#EEF2F8] border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-brand-900 font-display mb-8">Technical stack tags</h2>
+            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Python (PyTorch)</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Rust</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Go</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">LangChain</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Docker</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Kubernetes</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Vanilla JS</span>
+                <span class="px-4 py-2 bg-white text-brand-700 rounded-lg font-mono font-semibold text-xs border border-border">Tailwind CSS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-[1240px] mx-auto px-6 text-center space-y-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-extrabold font-display leading-[1.1]">Interested in our delivery capability?</h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+                Let us showcase how we can secure, structure, and accelerate your next complex platform build.
+            </p>
+            <div class="pt-4">
+                <a href="contact.html" class="btn-primary">Explore the case study</a>
             </div>
         </div>
     </section>
     </main>
 
     <include src="footer.html"></include>
+
 </body>
 </html>
