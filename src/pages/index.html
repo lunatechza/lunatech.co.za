@@ -27,7 +27,7 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-900 pt-20">
         <!-- Abstract orbital graphics -->
-        <div class="absolute inset-0 z-0 opacity-45 pointer-events-none">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
             <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" fill="none">
                 <circle cx="1100" cy="200" r="400" stroke="#4D61D8" stroke-width="1.5" stroke-dasharray="10 15" class="animate-pulse" />
                 <circle cx="1100" cy="200" r="250" stroke="#12A8B4" stroke-width="1" />
@@ -35,8 +35,13 @@
             </svg>
         </div>
 
+        <!-- Hero Background Image and Overlays -->
         <div class="absolute inset-0 z-0">
-            <img src="images/slider.png" alt="Hero Background" class="w-full h-full object-cover mix-blend-overlay opacity-30" width="1920" height="1080" fetchpriority="high">
+            <img src="images/slider.png" alt="Hero Background" class="w-full h-full object-cover object-right" width="1920" height="1080" fetchpriority="high">
+            <!-- Mobile stronger uniform overlay (up to lg breakpoint) -->
+            <div class="absolute inset-0 bg-brand-900/85 lg:hidden"></div>
+            <!-- Desktop directional gradient overlay (from lg breakpoint) -->
+            <div class="absolute inset-0 hidden lg:block bg-gradient-to-r from-brand-900/95 via-brand-900/70 to-brand-900/25"></div>
         </div>
 
         <div class="relative z-10 max-w-[1240px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full py-12">
@@ -56,7 +61,7 @@
 
             <!-- Visual Interface panel -->
             <div class="lg:col-span-5 hidden lg:block">
-                <div class="bg-[#121B4B]/80 backdrop-blur-md rounded-2xl border border-brand-500/20 shadow-lg p-6 space-y-6">
+                <div class="bg-[#121B4B]/70 backdrop-blur-md rounded-2xl border border-brand-500/20 shadow-lg p-6 space-y-6">
                     <div class="flex justify-between items-center border-b border-brand-500/10 pb-4">
                         <div class="flex space-x-2">
                             <span class="w-3 h-3 rounded-full bg-red-500/80"></span>

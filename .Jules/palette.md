@@ -13,3 +13,7 @@
 ## 2026-05-23 - [Navigation Accessibility and Semantic Landmarks]
 **Learning:** For keyboard-only users, traversing repetitive navigation menus on every page load is frustrating and inefficient. Semantic landmarks like <main> are also critical for screen reader users to jump directly to the primary content of a page.
 **Action:** Implement a visually hidden "Skip to main content" link that becomes visible on focus at the top of every page, and ensure core content is wrapped in a <main> tag with a matching ID.
+
+## 2026-07-11 - [Refined Hero Image Contrast and Human Visibility]
+**Learning:** High-contrast overlays and directional gradients allow for rich photographic backgrounds containing people/subjects to be displayed with full human visibility without sacrificing standard text contrast or compliance.
+**Action:** Use multi-layer or responsive overlay mechanisms (e.g., directional gradient overlays for wider viewports where text and faces are decoupled, and uniform dark overlays on smaller viewports where text stacks directly over faces) to maintain optimal WCAG contrast and human connection.
