@@ -3,127 +3,219 @@
 <head>
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
-    <title>Our Services | Lunatech (Pty) Ltd.</title>
+    <title>Services | Lunatech</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lunatech is a South African software powerhouse established in 2014, leading the charge in AI-driven development, Blockchain, and next-generation digital solutions for the 2026 landscape.">
+    <meta name="description" content="Explore Lunatech's services across product engineering, AI & automation, fintech, cloud systems, and technical strategy. South African software development.">
     <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo48.png">
-    <link rel="preload" as="image" href="images/logo.png">
+    <link rel="preload" as="image" href="images/Lunatech-DK-Blue-Logo-Straight.png">
 </head>
-<body class="font-['Montserrat'] text-gray-800 bg-white">
+
+<body class="font-body text-text-700 bg-canvas pt-20">
+
     <include src="header.html"></include>
 
     <main id="main-content">
-    <div class="pt-24 pb-12 bg-gray-50 border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-black text-lunatech-blue uppercase tracking-widest">Our Services</h1>
-            <nav class="flex text-sm font-bold uppercase mt-4">
-                <a href="index.html" class="text-gray-400 hover:text-lunatech-blue">Home</a>
-                <span class="mx-2 text-gray-300">/</span>
-                <span class="text-lunatech-blue">Services</span>
+    <!-- Breadcrumbs / Hero Header -->
+    <div class="py-12 bg-[#EEF2F8] border-b border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <nav class="flex text-xs font-bold uppercase tracking-wider space-x-2">
+                <a href="index.html" class="text-text-500 hover:text-brand-700">Home</a>
+                <span class="text-[#DCE3EE]">/</span>
+                <span class="text-brand-700">Services</span>
             </nav>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#121B4B] font-display mt-4 leading-tight">
+                Technology capability from strategy to production.
+            </h1>
+            <p class="text-[#687386] text-base md:text-lg font-normal mt-3 max-w-3xl leading-relaxed">
+                Lunatech advises, builds, integrates and operates robust enterprise platforms. We remain technically accountable from initial concept through production-grade operations.
+            </p>
         </div>
     </div>
 
-    <!-- Intro -->
+    <!-- Capabilities Groups -->
     <section class="py-24">
-        <div class="container mx-auto px-6 text-center max-w-4xl">
-            <h2 class="text-3xl font-bold mb-8 uppercase text-lunatech-blue tracking-tighter">What We Do</h2>
-            <p class="text-xl text-gray-600 leading-relaxed italic">
-                We are software development specialists who are experienced and proficient in each phase of the development life cycle. By 2026, we have evolved our process to be AI-first, from requirements gathering and design to AI-augmented development, automated quality assurance, and intelligent deployment.
-            </p>
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Group 1 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">Product engineering</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            We architect stable digital products designed to scale alongside your operations, taking responsibility for standardizing code quality and interfaces.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Web platforms & custom portals</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> High-performance mobile applications</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Internal business workflow systems</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> API design & backend frameworks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-magic text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">AI and automation</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            Bypass generic wrappers and build serious intelligence. We deploy workflows that automate complex human-in-the-loop audit controls.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Custom AI agent workflows & execution</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Retrieval and structured knowledge pipelines</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Custom decision-support engines</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Model fine-tuning & audit control guardrails</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-cubes text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">Fintech and blockchain</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            Engineering secure financial trading networks and distributed ledger integrations that must perform perfectly under high operational load.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Exchange and digital brokerage backend</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Multi-party wallet and custody architectures</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Payment ledger flow & stablecoin automation</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Financial compliance and transaction audit trails</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Group 4 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-code-fork text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">Data and integrations</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            Connecting decoupled legacy stacks into secure, reliable data pipelines with precise state tracking and exception auditing.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> System integrations & decoupled webhooks</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Large-scale ETL data flows & pipelines</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Enterprise reporting and real-time dashboards</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Safe legacy database migrations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Group 5 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-terminal text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">Cloud and DevOps</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            Infrastructure engineered to minimize single points of failure, running immutable code deployments with predictive auto-scaling.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> AWS, GCP, and Azure cloud infrastructure</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Secure CI/CD pipelines & container orchestration</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> System monitoring, alerting & log auditing</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Automated backups & recovery automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Group 6 -->
+                <div class="bg-white p-10 rounded-2xl border border-border shadow-sm space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-12 h-12 bg-[#EEF2F8] rounded-xl flex items-center justify-center text-brand-700">
+                            <i class="fa fa-flask text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-900 font-display">Technical strategy</h3>
+                        <p class="text-sm text-text-500 leading-relaxed">
+                            We assist leadership in making foundational architecture decisions before committing significant financial resources.
+                        </p>
+                        <ul class="space-y-2 text-xs text-text-500">
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Product discovery & feasibility architecture</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Systematic code audits & health reviews</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Fractional CTO consulting & roadmap audits</li>
+                            <li class="flex items-center"><i class="fa fa-circle text-[#12A8B4] text-[4px] mr-2"></i> Technical rescue and system stabilization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Service Grid -->
-    <section class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- AI & Machine Learning -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-magic text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">AI & ML</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        Architecting proprietary LLMs and autonomous agent workflows. We integrate machine learning into core business logic to automate complex decision-making processes.
+    <!-- Engagement Models -->
+    <section class="py-24 bg-[#EEF2F8] border-t border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#2B3896]">How We Partner</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#121B4B] font-display">Our engagement models</h2>
+                <div class="w-12 h-1 bg-[#12A8B4] mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Option 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider font-mono">01 / PROJECT-BASED</span>
+                    <h3 class="text-xl font-bold text-[#121B4B] font-display">Defined project</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Best for structured systems where the requirements, timelines, and final outcomes are mapped out in a clean implementation roadmap.
                     </p>
                 </div>
 
-                <!-- Blockchain -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-cubes text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">Blockchain</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        Leading-edge distributed ledger technology. We build secure, transparent, and immutable systems for finance, logistics, and digital identity.
+                <!-- Option 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider font-mono">02 / EMBEDDED</span>
+                    <h3 class="text-xl font-bold text-[#121B4B] font-display">Embedded technical team</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Best for companies that need immediate senior capacity. Our developers embed into your engineering workflow to accelerate delivery cycles.
                     </p>
                 </div>
 
-                <!-- Web Development -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-code text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">Web Development</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        High-performance web applications built for scale. Using modern vanilla-JS approaches combined with AI-optimized backends for the 2026 landscape.
-                    </p>
-                </div>
-
-                <!-- Mobile Apps -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-mobile text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">Mobile Apps</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        Native and cross-platform mobile solutions that leverage device-side AI for superior user experiences and intelligent offline capabilities.
-                    </p>
-                </div>
-
-                <!-- Next-Gen DevOps -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-terminal text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">DevOps 2.0</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        Self-healing infrastructure and AI-managed CI/CD pipelines. We ensure zero downtime through predictive maintenance and automated scaling.
-                    </p>
-                </div>
-
-                <!-- UI/UX Design -->
-                <div class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 hover:bg-lunatech-blue group transition-all duration-500">
-                    <div class="mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa fa-paint-brush text-5xl text-lunatech-blue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6 uppercase text-lunatech-blue group-hover:text-white tracking-widest">UX/UI Design</h3>
-                    <p class="text-gray-600 group-hover:text-white/90 leading-relaxed">
-                        User-centric design philosophies that emphasize accessibility and human-AI collaboration. Visually stunning interfaces for complex systems.
+                <!-- Option 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-border space-y-4">
+                    <span class="text-xs font-bold text-[#12A8B4] uppercase tracking-wider font-mono">03 / CONTINUOUS</span>
+                    <h3 class="text-xl font-bold text-[#121B4B] font-display">Ongoing partnership</h3>
+                    <p class="text-sm text-text-500 leading-relaxed">
+                        Best for continuous system maintenance, optimization, and edge operational support. We act as your long-term technical custodians.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-24 bg-lunatech-dark text-white relative overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl font-bold mb-8 uppercase tracking-widest">Ready to Build the Future?</h2>
-            <p class="text-xl mb-12 text-blue-100 max-w-2xl mx-auto font-light">Let’s collaborate on your next intelligent software project. We have the expertise to bring your 2026 vision to life.</p>
-            <a href="contact.html" class="inline-block px-12 py-5 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-lunatech-dark transition duration-300 uppercase tracking-widest">Contact Us Today</a>
+    <!-- Final CTA -->
+    <section class="py-24 bg-brand-900 text-white relative overflow-hidden">
+        <div class="max-w-[1240px] mx-auto px-6 text-center space-y-8 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-extrabold font-display leading-[1.1]">Ready to discuss your system?</h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+                Let’s analyze the technical constraints, define milestones, and outline a path to production.
+            </p>
+            <div class="pt-4">
+                <a href="contact.html" class="btn-primary">Discuss your platform</a>
+            </div>
         </div>
     </section>
     </main>
 
     <include src="footer.html"></include>
+
 </body>
 </html>
