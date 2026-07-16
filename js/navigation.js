@@ -61,13 +61,35 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
   }
 
-  // Modal interactions
+  // Modal interactions with robust accessibility focus management
+  let lastActiveElement = null;
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    lastActiveElement = document.activeElement;
+    modal.classList.remove('hidden');
+    // Focus the close button inside the modal to assist screen readers and keyboard flow
+    const closeBtn = modal.querySelector('.close-modal');
+    if (closeBtn) {
+      closeBtn.focus();
+    }
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    if (lastActiveElement) {
+      lastActiveElement.focus();
+      lastActiveElement = null;
+    }
+  };
+
   const setupModal = (openBtnId, modalId) => {
     const openBtn = document.getElementById(openBtnId);
     const modal = document.getElementById(modalId);
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
+        openModal(modal);
       });
     }
   };
@@ -80,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
       if (activeModal) {
-        activeModal.classList.add('hidden');
+        closeModal(activeModal);
       }
     }
   });
@@ -89,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       const modal = e.target.closest('[id$="-modal"]');
       if (modal) {
-        modal.classList.add('hidden');
+        closeModal(modal);
       }
     });
   });
@@ -97,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close modal on background click
   window.addEventListener('click', (e) => {
     if (e.target.id && e.target.id.endsWith('-modal')) {
-      e.target.classList.add('hidden');
+      closeModal(e.target);
     }
   });
 

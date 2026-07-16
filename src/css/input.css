@@ -8,11 +8,20 @@
   }
 
   .nav-link {
-    @apply text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300;
+    @apply px-3 py-2 rounded-md text-sm font-medium transition duration-300 text-slate-300 hover:text-white;
   }
 
   .nav-link-active {
     @apply text-white border-b-2 border-white;
+  }
+
+  /* Accessible high-contrast styling when header background is white (on scroll or other pages) */
+  #main-header.bg-white .nav-link {
+    @apply text-text-700 hover:text-brand-500;
+  }
+
+  #main-header.bg-white .nav-link-active {
+    @apply text-brand-700 border-b-2 border-brand-700;
   }
 
   .section-title {
