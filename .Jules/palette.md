@@ -17,3 +17,7 @@
 ## 2026-07-11 - [Refined Hero Image Contrast and Human Visibility]
 **Learning:** High-contrast overlays and directional gradients allow for rich photographic backgrounds containing people/subjects to be displayed with full human visibility without sacrificing standard text contrast or compliance.
 **Action:** Use multi-layer or responsive overlay mechanisms (e.g., directional gradient overlays for wider viewports where text and faces are decoupled, and uniform dark overlays on smaller viewports where text stacks directly over faces) to maintain optimal WCAG contrast and human connection.
+
+## 2026-07-16 - [Focus Management in Modals & Scrolled Header Contrast]
+**Learning:** For users navigating via keyboards and assistive technologies, modal dialogs must trap and manage focus; focusing the primary closing action on open and restoring focus to the initiating trigger upon close preserves orientation. Additionally, dynamic background transitions (such as a header turning from transparent to white on scroll) require corresponding high-contrast navigation link styles to prevent low-contrast or white-on-white text readability failures.
+**Action:** Always implement robust focus tracking and restoration handlers for modal elements, and ensure color classes adapt cleanly when an ancestor's background color changes.

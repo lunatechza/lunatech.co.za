@@ -619,7 +619,7 @@ video {
   line-height: 1.25rem;
   font-weight: 500;
   --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -636,6 +636,26 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+/* Accessible high-contrast styling when header background is white (on scroll or other pages) */
+
+#main-header.bg-white .nav-link {
+  --tw-text-opacity: 1;
+  color: rgb(39 50 72 / var(--tw-text-opacity, 1));
+}
+
+#main-header.bg-white .nav-link:hover {
+  --tw-text-opacity: 1;
+  color: rgb(77 97 216 / var(--tw-text-opacity, 1));
+}
+
+#main-header.bg-white .nav-link-active {
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(43 56 150 / var(--tw-border-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(43 56 150 / var(--tw-text-opacity, 1));
 }
 
 .sr-only {
