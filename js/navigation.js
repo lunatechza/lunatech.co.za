@@ -149,6 +149,29 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.textContent = 'Sending...';
       }
 
+      // Retrieve form values to populate the mailto URL
+      const firstname = document.getElementById('firstname')?.value || '';
+      const lastname = document.getElementById('lastname')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const company = document.getElementById('company')?.value || '';
+      const projectTypeSelect = document.getElementById('project-type');
+      const projectType = projectTypeSelect ? projectTypeSelect.options[projectTypeSelect.selectedIndex]?.text : '';
+      const timelineSelect = document.getElementById('timeline');
+      const timeline = timelineSelect ? timelineSelect.options[timelineSelect.selectedIndex]?.text : '';
+      const message = document.getElementById('message')?.value || '';
+
+      const emailSubject = `Lunatech Project Query from ${firstname} ${lastname}`;
+      const emailBody = `Name: ${firstname} ${lastname}
+Email: ${email}
+Company: ${company || 'N/A'}
+Project Type: ${projectType}
+Timeline: ${timeline}
+
+Description:
+${message}`;
+
+      const mailtoUrl = `mailto:info@lunatech.co.za?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
       // Simulate API call latency (1.2 seconds) before success transition
       setTimeout(() => {
         if (formContent && formSuccess) {
@@ -162,6 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Use preventScroll to avoid browser scrolling the focused element under our fixed header
             successTitle.focus({ preventScroll: true });
           }
+
+          // Trigger the user's native email client with pre-populated values
+          window.location.href = mailtoUrl;
         }
       }, 1200);
     });
