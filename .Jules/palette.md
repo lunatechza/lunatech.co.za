@@ -21,3 +21,7 @@
 ## 2026-07-16 - [Focus Management in Modals & Scrolled Header Contrast]
 **Learning:** For users navigating via keyboards and assistive technologies, modal dialogs must trap and manage focus; focusing the primary closing action on open and restoring focus to the initiating trigger upon close preserves orientation. Additionally, dynamic background transitions (such as a header turning from transparent to white on scroll) require corresponding high-contrast navigation link styles to prevent low-contrast or white-on-white text readability failures.
 **Action:** Always implement robust focus tracking and restoration handlers for modal elements, and ensure color classes adapt cleanly when an ancestor's background color changes.
+
+## 2026-07-17 - [Single-Page Form Success Transitions and Viewport Context]
+**Learning:** When transitioning a long form into a much shorter success container, hiding the form structure can cause the document's height to shrink drastically. If the page was scrolled to the bottom (e.g., to reach the submit button), the success container may get pushed above the viewport fold, creating a confusing blank-page sensation. Shifting programmatic focus to the success heading can also cause the browser to scroll the focused element underneath a fixed header.
+**Action:** Always invoke `successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' })` to smoothly adjust the user's viewport focus, and use `element.focus({ preventScroll: true })` to prevent layout jumps or fixed-header occlusion.

@@ -123,18 +123,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Character counter and honeypot validation for contact form
+  // Character counter, honeypot validation, and asynchronous UX submission for contact form
   const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
   const messageArea = document.getElementById('message');
   const charCounter = document.getElementById('char-counter');
+  const formContent = document.getElementById('form-content');
+  const formSuccess = document.getElementById('form-success');
+  const successTitle = document.getElementById('success-title');
+  const submitBtn = document.getElementById('submit-btn');
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
       const honeypot = contactForm.querySelector('input[name="website_url"]');
       if (honeypot && honeypot.value !== '') {
-        e.preventDefault();
         alert('Message could not be sent.');
+        return;
       }
+
+      // Enter loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed', 'animate-pulse');
+        submitBtn.textContent = 'Sending...';
+      }
+
+      // Simulate API call latency (1.2 seconds) before success transition
+      setTimeout(() => {
+        if (formContent && formSuccess) {
+          formContent.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+
+          // Smoothly scroll the success container to the center of the viewport so the user doesn't lose context
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          if (successTitle) {
+            // Use preventScroll to avoid browser scrolling the focused element under our fixed header
+            successTitle.focus({ preventScroll: true });
+          }
+        }
+      }, 1200);
     });
   }
 
