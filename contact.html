@@ -144,6 +144,20 @@
                 <!-- Form Column -->
                 <div class="lg:col-span-7">
                     <div class="bg-white border border-border p-10 rounded-2xl shadow-sm space-y-8">
+                        <!-- Success Message Container -->
+                        <div id="form-success" class="hidden text-center py-12 space-y-6 animate-fade-in-up">
+                            <div class="w-16 h-16 bg-[#EEF2F8] text-[#12A8B4] rounded-full flex items-center justify-center mx-auto shadow-sm">
+                                <i class="fa fa-envelope text-2xl"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 id="success-title" tabindex="-1" class="text-2xl font-bold text-[#121B4B] font-display focus:outline-none">Message Sent!</h3>
+                                <p class="text-sm text-text-500 max-w-md mx-auto leading-relaxed">
+                                    Thank you for reaching out. A lead systems engineer from our team will review your project details and get back to you within 24 business hours.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="form-content" class="space-y-8">
                         <div>
                             <h3 id="contact-title" class="text-xl font-bold text-[#121B4B] font-display">Tell us about your project</h3>
                             <p class="text-xs text-text-500 mt-1">Fields marked with an asterisk (<span class="text-red-500">*</span>) are required.</p>
@@ -225,10 +239,11 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="w-full btn-primary font-bold uppercase tracking-[0.15em] text-sm py-4">
+                            <button type="submit" id="submit-btn" class="w-full btn-primary font-bold uppercase tracking-[0.15em] text-sm py-4 transition-all duration-300">
                                 Discuss your project
                             </button>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -123,18 +123,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Character counter and honeypot validation for contact form
+  // Character counter, honeypot validation, and asynchronous UX submission for contact form
   const contactForm = document.querySelector('form[aria-labelledby="contact-title"]');
   const messageArea = document.getElementById('message');
   const charCounter = document.getElementById('char-counter');
+  const formContent = document.getElementById('form-content');
+  const formSuccess = document.getElementById('form-success');
+  const successTitle = document.getElementById('success-title');
+  const submitBtn = document.getElementById('submit-btn');
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
       const honeypot = contactForm.querySelector('input[name="website_url"]');
       if (honeypot && honeypot.value !== '') {
-        e.preventDefault();
         alert('Message could not be sent.');
+        return;
       }
+
+      // Enter loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-70', 'cursor-not-allowed', 'animate-pulse');
+        submitBtn.textContent = 'Sending...';
+      }
+
+      // Retrieve form values to populate the mailto URL
+      const firstname = document.getElementById('firstname')?.value || '';
+      const lastname = document.getElementById('lastname')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const company = document.getElementById('company')?.value || '';
+      const projectTypeSelect = document.getElementById('project-type');
+      const projectType = projectTypeSelect ? projectTypeSelect.options[projectTypeSelect.selectedIndex]?.text : '';
+      const timelineSelect = document.getElementById('timeline');
+      const timeline = timelineSelect ? timelineSelect.options[timelineSelect.selectedIndex]?.text : '';
+      const message = document.getElementById('message')?.value || '';
+
+      const emailSubject = `Lunatech Project Query from ${firstname} ${lastname}`;
+      const emailBody = `Name: ${firstname} ${lastname}
+Email: ${email}
+Company: ${company || 'N/A'}
+Project Type: ${projectType}
+Timeline: ${timeline}
+
+Description:
+${message}`;
+
+      const mailtoUrl = `mailto:info@lunatech.co.za?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Simulate API call latency (1.2 seconds) before success transition
+      setTimeout(() => {
+        if (formContent && formSuccess) {
+          formContent.classList.add('hidden');
+          formSuccess.classList.remove('hidden');
+
+          // Smoothly scroll the success container to the center of the viewport so the user doesn't lose context
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          if (successTitle) {
+            // Use preventScroll to avoid browser scrolling the focused element under our fixed header
+            successTitle.focus({ preventScroll: true });
+          }
+
+          // Trigger the user's native email client with pre-populated values
+          window.location.href = mailtoUrl;
+        }
+      }, 1200);
     });
   }
 

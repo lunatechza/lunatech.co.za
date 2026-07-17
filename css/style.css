@@ -931,6 +931,10 @@ video {
   max-width: 1240px;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -955,6 +959,10 @@ video {
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 
 .grid-cols-1 {
@@ -1665,6 +1673,10 @@ video {
 
 .opacity-20 {
   opacity: 0.2;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 .shadow-lg {
