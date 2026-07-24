@@ -25,3 +25,7 @@
 ## 2026-07-17 - [Single-Page Form Success Transitions and Viewport Context]
 **Learning:** When transitioning a long form into a much shorter success container, hiding the form structure can cause the document's height to shrink drastically. If the page was scrolled to the bottom (e.g., to reach the submit button), the success container may get pushed above the viewport fold, creating a confusing blank-page sensation. Shifting programmatic focus to the success heading can also cause the browser to scroll the focused element underneath a fixed header.
 **Action:** Always invoke `successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' })` to smoothly adjust the user's viewport focus, and use `element.focus({ preventScroll: true })` to prevent layout jumps or fixed-header occlusion.
+
+## 2026-07-24 - [Mobile Menu Scroll-Lock & State Restoration]
+**Learning:** Leaving background scrolling active when a full-screen or half-screen mobile menu overlay is visible results in a highly disjointed and disorienting user experience. Furthermore, failing to handle layout transitions (like window resizing or outside click/keyboard dismissal) leaves stray background locks or menu remnants active.
+**Action:** Use client-side event handlers to cleanly toggle `overflow-hidden` on the body, listen for clicks outside the menu container, capture Escape key presses, and watch for screen resize events to gracefully reset states.

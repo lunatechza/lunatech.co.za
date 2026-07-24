@@ -1,6 +1,6 @@
 // Navigation and UI interactions
 document.addEventListener('DOMContentLoaded', () => {
-  // Highlight active navigation link
+  // Highlight active navigation link for both desktop and mobile
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
@@ -8,15 +8,53 @@ document.addEventListener('DOMContentLoaded', () => {
       link.setAttribute('aria-current', 'page');
     }
   });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('text-accent-500', 'font-bold');
+      link.classList.remove('text-white/90');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
 
-  // Mobile menu toggle
+  // Mobile menu toggle and visibility controls
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const openMobileMenu = () => {
+    mobileMenu.classList.remove('hidden', 'md:hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('overflow-hidden');
+  };
+
+  const closeMobileMenu = () => {
+    mobileMenu.classList.add('hidden', 'md:hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overflow-hidden');
+  };
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isHidden = mobileMenu.classList.toggle('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close mobile menu on click outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on screen resize to desktop breakpoint (768px)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -97,12 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
-  // Handle Escape key to close modals
+  // Handle Escape key to close modals or mobile menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
       if (activeModal) {
         closeModal(activeModal);
+      } else if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
       }
     }
   });
