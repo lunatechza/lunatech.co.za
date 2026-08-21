@@ -1,22 +1,50 @@
 // Navigation and UI interactions
 document.addEventListener('DOMContentLoaded', () => {
-  // Highlight active navigation link
+  // Highlight active navigation links (both desktop and mobile)
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
-      link.classList.add('nav-link-active');
+      if (link.classList.contains('nav-link')) {
+        link.classList.add('nav-link-active');
+      } else {
+        link.classList.add('text-accent-500', 'font-bold');
+      }
       link.setAttribute('aria-current', 'page');
     }
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle with body scroll locking and click-outside/escape handlers
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const closeMobileMenu = () => {
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.focus();
+      }
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isHidden = mobileMenu.classList.toggle('hidden');
       mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+      if (!isHidden) {
+        document.body.classList.add('overflow-hidden');
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close mobile menu on click outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -97,12 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
-  // Handle Escape key to close modals
+  // Handle Escape key to close modals or mobile menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
       if (activeModal) {
         closeModal(activeModal);
+      } else if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
       }
     }
   });
