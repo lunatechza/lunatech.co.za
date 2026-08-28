@@ -185,16 +185,41 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.textContent = 'Sending...';
       }
 
-      // Retrieve form values to populate the mailto URL
-      const firstname = document.getElementById('firstname')?.value || '';
-      const lastname = document.getElementById('lastname')?.value || '';
-      const email = document.getElementById('email')?.value || '';
-      const company = document.getElementById('company')?.value || '';
+      // Retrieve and sanitize form values to protect against HTML injection / XSS
+      const sanitizeHTML = (text) => (text ? text.replace(/<[^>]*>/g, '') : '');
+
+      const firstname = sanitizeHTML(document.getElementById('firstname')?.value || '');
+      const lastname = sanitizeHTML(document.getElementById('lastname')?.value || '');
+      const email = sanitizeHTML(document.getElementById('email')?.value || '');
+      const company = sanitizeHTML(document.getElementById('company')?.value || '');
       const projectTypeSelect = document.getElementById('project-type');
       const projectType = projectTypeSelect ? projectTypeSelect.options[projectTypeSelect.selectedIndex]?.text : '';
       const timelineSelect = document.getElementById('timeline');
       const timeline = timelineSelect ? timelineSelect.options[timelineSelect.selectedIndex]?.text : '';
-      const message = document.getElementById('message')?.value || '';
+      const message = sanitizeHTML(document.getElementById('message')?.value || '');
+
+      // Defense-in-depth input length validation
+      if (firstname.length > 50 || lastname.length > 50 || email.length > 100 || company.length > 100 || message.length > 2000) {
+        alert('An input field exceeds the allowed character limit.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-70', 'cursor-not-allowed', 'animate-pulse');
+          submitBtn.textContent = 'Discuss your project';
+        }
+        return;
+      }
+
+      // Secure email format validation
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-70', 'cursor-not-allowed', 'animate-pulse');
+          submitBtn.textContent = 'Discuss your project';
+        }
+        return;
+      }
 
       const emailSubject = `Lunatech Project Query from ${firstname} ${lastname}`;
       const emailBody = `Name: ${firstname} ${lastname}
