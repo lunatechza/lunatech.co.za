@@ -1,6 +1,6 @@
 // Navigation and UI interactions
 document.addEventListener('DOMContentLoaded', () => {
-  // Highlight active navigation link
+  // Highlight active navigation links (desktop and mobile)
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
@@ -8,15 +8,49 @@ document.addEventListener('DOMContentLoaded', () => {
       link.setAttribute('aria-current', 'page');
     }
   });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('text-accent-500', 'font-bold');
+      link.classList.remove('text-white/90');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
 
-  // Mobile menu toggle
+  // Mobile menu toggle & interactions (scroll lock, click outside, ESC key, resize)
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  const closeMobileMenu = () => {
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    if (!mobileMenu) return;
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    mobileMenuBtn?.setAttribute('aria-expanded', (!isHidden).toString());
+    document.body.classList.toggle('overflow-hidden', !isHidden);
+  };
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isHidden = mobileMenu.classList.toggle('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+      toggleMobileMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -97,12 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
-  // Handle Escape key to close modals
+  // Handle Escape key to close modals or mobile menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
       if (activeModal) {
         closeModal(activeModal);
+      } else {
+        closeMobileMenu();
       }
     }
   });
