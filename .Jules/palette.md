@@ -25,3 +25,7 @@
 ## 2026-07-17 - [Single-Page Form Success Transitions and Viewport Context]
 **Learning:** When transitioning a long form into a much shorter success container, hiding the form structure can cause the document's height to shrink drastically. If the page was scrolled to the bottom (e.g., to reach the submit button), the success container may get pushed above the viewport fold, creating a confusing blank-page sensation. Shifting programmatic focus to the success heading can also cause the browser to scroll the focused element underneath a fixed header.
 **Action:** Always invoke `successContainer.scrollIntoView({ behavior: 'smooth', block: 'center' })` to smoothly adjust the user's viewport focus, and use `element.focus({ preventScroll: true })` to prevent layout jumps or fixed-header occlusion.
+
+## 2026-07-18 - [Flexbox Text Centering and Button Component Consistency]
+**Learning:** Buttons rendered with explicit height or line-height rules without flex alignment can cause text to baseline-align or float towards the top of the button frame, particularly when rendered as styled anchor (`<a>`) tags. Applying `inline-flex items-center justify-center` ensures robust, consistent vertical and horizontal centering regardless of element tag or font line-height.
+**Action:** Standardize base button utilities using flexbox alignment (`inline-flex items-center justify-center`) and explicit padding across primary and secondary button components.
