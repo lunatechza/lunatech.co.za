@@ -131,14 +131,26 @@ document.addEventListener('DOMContentLoaded', () => {
   setupModal('disclaimer-open', 'disclaimer-modal');
   setupModal('privacy-open', 'privacy-modal');
 
-  // Handle Escape key to close modals or mobile menu
+  // Handle Keyboard Navigation (Escape key to close, Tab key to trap focus within modal)
   document.addEventListener('keydown', (e) => {
+    const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
     if (e.key === 'Escape') {
-      const activeModal = document.querySelector('[id$="-modal"]:not(.hidden)');
       if (activeModal) {
         closeModal(activeModal);
       } else {
         closeMobileMenu();
+      }
+    } else if (e.key === 'Tab' && activeModal) {
+      const focusables = activeModal.querySelectorAll('a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     }
   });
