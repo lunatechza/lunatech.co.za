@@ -281,4 +281,42 @@ ${message}`;
       }
     });
   }
+
+  // Analytics Event Tracking System
+  window.dataLayer = window.dataLayer || [];
+  const trackAnalyticsEvent = (eventName, params = {}) => {
+    const payload = {
+      event: eventName,
+      page_path: window.location.pathname || '/',
+      campaign: 'lunatech_chainex_referral',
+      ...params
+    };
+    window.dataLayer.push(payload);
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, payload);
+    }
+  };
+
+  // Track page view for ChainEX case study page
+  if (window.location.pathname.includes('chainex.html')) {
+    trackAnalyticsEvent('chainex_case_study_view', {
+      page_path: window.location.pathname
+    });
+  }
+
+  // Delegate click events for analytics elements
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-analytics-event]');
+    if (!target) return;
+    const eventName = target.getAttribute('data-analytics-event');
+    const ctaPosition = target.getAttribute('data-cta-position') || 'unknown';
+    const ctaText = target.getAttribute('data-cta-text') || target.textContent.trim();
+    const destination = target.getAttribute('href') || '';
+
+    trackAnalyticsEvent(eventName, {
+      cta_position: ctaPosition,
+      cta_text: ctaText,
+      destination: destination
+    });
+  });
 });

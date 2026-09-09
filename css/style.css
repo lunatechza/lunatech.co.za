@@ -740,8 +740,16 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .ml-1\.5 {
@@ -774,6 +782,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .line-clamp-3 {
@@ -935,6 +947,10 @@ video {
   max-width: 48rem;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
 .max-w-\[1240px\] {
   max-width: 1240px;
 }
@@ -945,6 +961,10 @@ video {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-shrink-0 {
@@ -1071,6 +1091,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+
+.space-y-16 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(4rem * var(--tw-space-y-reverse));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1209,6 +1235,10 @@ video {
   border-color: rgb(220 227 238 / var(--tw-border-opacity, 1));
 }
 
+.border-border\/60 {
+  border-color: rgb(220 227 238 / 0.6);
+}
+
 .border-brand-500\/10 {
   border-color: rgb(77 97 216 / 0.1);
 }
@@ -1219,6 +1249,10 @@ video {
 
 .border-brand-700\/20 {
   border-color: rgb(43 56 150 / 0.2);
+}
+
+.border-brand-700\/30 {
+  border-color: rgb(43 56 150 / 0.3);
 }
 
 .bg-\[\#0B1026\]\/80 {
@@ -1437,6 +1471,10 @@ video {
   padding-top: 1rem;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1483,6 +1521,10 @@ video {
 
 .text-\[10px\] {
   font-size: 10px;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
 }
 
 .text-\[4px\] {
@@ -1532,6 +1574,10 @@ video {
 
 .font-light {
   font-weight: 300;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .font-normal {
@@ -1971,6 +2017,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:w-auto {
+    width: auto;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2037,12 +2087,25 @@ video {
     border-bottom-width: calc(0px * var(--tw-divide-y-reverse));
   }
 
+  .md\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0px;
   }
 
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-4xl {
