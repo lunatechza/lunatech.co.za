@@ -863,8 +863,16 @@ video {
   max-height: 4rem;
 }
 
+.max-h-20 {
+  max-height: 5rem;
+}
+
 .max-h-24 {
   max-height: 6rem;
+}
+
+.max-h-28 {
+  max-height: 7rem;
 }
 
 .max-h-32 {
@@ -1309,6 +1317,11 @@ video {
   --tw-gradient-to: rgb(18 27 75 / 0.25) var(--tw-gradient-to-position);
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1410,6 +1423,10 @@ video {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pt-20 {
@@ -1673,6 +1690,10 @@ video {
 
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .opacity-20 {
