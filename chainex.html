@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; object-src 'none';">
+    <title>ChainEX Cryptocurrency Exchange Infrastructure | Lunatech</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See how Lunatech engineers and operates secure trading, wallet, API and transaction infrastructure for ChainEX, a South African digital asset exchange.">
+    <meta name="copyright" content="2014-2026 Lunatech (Pty) Ltd. All Rights Reserved.">
+
+    <link rel="canonical" href="https://lunatech.co.za/chainex.html">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ChainEX Cryptocurrency Exchange Infrastructure | Lunatech">
+    <meta property="og:description" content="See how Lunatech engineers and operates secure trading, wallet, API and transaction infrastructure for ChainEX, a South African digital asset exchange.">
+    <meta property="og:url" content="https://lunatech.co.za/chainex.html">
+    <meta property="og:image" content="https://lunatech.co.za/images/chain.png">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ChainEX Cryptocurrency Exchange Infrastructure | Lunatech">
+    <meta name="twitter:description" content="See how Lunatech engineers and operates secure trading, wallet, API and transaction infrastructure for ChainEX, a South African digital asset exchange.">
+    <meta name="twitter:image" content="https://lunatech.co.za/images/chain.png">
+
+    <!-- Fonts and CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="preload" href="fonts/fontawesome-webfont862f.woff?v=4.1.0" as="font" type="font/woff" crossorigin="">
+    <link rel="shortcut icon" href="images/logo48.png">
+    <link rel="preload" as="image" href="images/Lunatech-DK-Blue-Logo-Straight.png">
+    <link rel="preload" as="image" href="images/chain.png" fetchpriority="high">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "ChainEX Cryptocurrency Exchange Infrastructure",
+          "description": "See how Lunatech engineers and operates secure trading, wallet, API and transaction infrastructure for ChainEX, a South African digital asset exchange.",
+          "url": "https://lunatech.co.za/chainex.html",
+          "image": "https://lunatech.co.za/images/chain.png",
+          "author": {
+            "@type": "Organization",
+            "name": "Lunatech",
+            "url": "https://lunatech.co.za"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Lunatech",
+            "url": "https://lunatech.co.za"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lunatech.co.za/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Work",
+              "item": "https://lunatech.co.za/portfolio.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "ChainEX Case Study",
+              "item": "https://lunatech.co.za/chainex.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="font-body text-text-700 bg-canvas pt-20">
+
+    <header id="main-header" class="fixed w-full top-0 left-0 z-50 h-20 transition-all duration-300">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:px-6 focus:py-3 focus:bg-brand-700 focus:text-white focus:font-bold focus:rounded-lg focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to main content
+  </a>
+  <div class="max-w-[1240px] mx-auto h-full px-6 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="index.html" class="flex items-center" aria-label="Lunatech Home">
+        <img id="header-logo" src="images/Lunatech-DK-Blue-Logo-Straight.png" alt="Lunatech Logo" width="180" height="44" class="h-10 w-auto transition-all duration-300">
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="index.html" class="nav-link text-sm font-semibold tracking-wide transition duration-300">Home</a>
+      <a href="service.html" class="nav-link text-sm font-semibold tracking-wide transition duration-300">Services</a>
+      <a href="portfolio.html" class="nav-link text-sm font-semibold tracking-wide transition duration-300">Work</a>
+      <a href="about.html" class="nav-link text-sm font-semibold tracking-wide transition duration-300">About</a>
+      <a href="contact.html" class="nav-link text-sm font-semibold tracking-wide transition duration-300">Contact</a>
+    </nav>
+
+    <!-- Header CTA -->
+    <div class="hidden md:flex items-center">
+      <a href="contact.html" class="bg-[#2B3896] hover:bg-[#4D61D8] text-white font-semibold text-sm py-2.5 px-5 rounded-[10px] transition duration-300 transform hover:-translate-y-[1px] shadow-sm">Start a project</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" class="focus:ring-2 focus:ring-brand-700 focus:outline-none rounded p-1 transition-colors" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="hidden fixed inset-x-0 top-20 bg-brand-900 border-b border-brand-700/20 px-6 py-6 space-y-4 shadow-xl z-40 transition-all duration-300">
+    <nav class="flex flex-col space-y-3">
+      <a href="index.html" class="mobile-nav-link text-base font-semibold text-white/90 hover:text-white py-2">Home</a>
+      <a href="service.html" class="mobile-nav-link text-base font-semibold text-white/90 hover:text-white py-2">Services</a>
+      <a href="portfolio.html" class="mobile-nav-link text-base font-semibold text-white/90 hover:text-white py-2">Work</a>
+      <a href="about.html" class="mobile-nav-link text-base font-semibold text-white/90 hover:text-white py-2">About</a>
+      <a href="contact.html" class="mobile-nav-link text-base font-semibold text-white/90 hover:text-white py-2">Contact</a>
+    </nav>
+    <div class="pt-4 border-t border-brand-700/20">
+      <a href="contact.html" class="block text-center bg-[#2B3896] hover:bg-[#4D61D8] text-white font-semibold py-3 px-5 rounded-[10px] transition duration-300">Start a project</a>
+    </div>
+  </div>
+</header>
+
+<script src="js/navigation.js"></script>
+
+
+    <main id="main-content">
+    <!-- Breadcrumb & Hero Header -->
+    <div class="py-12 bg-[#EEF2F8] border-b border-border">
+        <div class="max-w-[1240px] mx-auto px-6">
+            <nav class="flex text-xs font-bold uppercase tracking-wider space-x-2" aria-label="Breadcrumb">
+                <a href="index.html" class="text-text-500 hover:text-brand-700">Home</a>
+                <span class="text-[#DCE3EE]">/</span>
+                <a href="portfolio.html" class="text-text-500 hover:text-brand-700">Work</a>
+                <span class="text-[#DCE3EE]">/</span>
+                <span class="text-brand-700">ChainEX Case Study</span>
+            </nav>
+            <div class="mt-6 space-y-3">
+                <span class="inline-block text-xs font-mono font-bold uppercase tracking-widest text-accent-500">CASE STUDY · FINTECH & BLOCKCHAIN</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-brand-900 font-display leading-tight max-w-4xl">
+                    Engineering the infrastructure behind a South African digital asset exchange.
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content & Details -->
+    <section class="py-16">
+        <div class="max-w-[1240px] mx-auto px-6 space-y-16">
+            <!-- Intro & Brand Graphic -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-lg text-text-700 leading-relaxed">
+                    <p class="font-medium text-brand-900 text-xl">
+                        ChainEX is a South African digital asset exchange that enables clients to trade, hold and manage supported crypto assets using ZAR markets.
+                    </p>
+                    <p>
+                        Lunatech operates as a core strategic engineering partner to ChainEX, taking long-term technical responsibility for critical platform infrastructure.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 bg-white border border-border p-10 rounded-2xl flex flex-col justify-center items-center shadow-sm">
+                    <img src="images/chain.png" alt="ChainEX Digital Asset Platform Logo" class="max-h-24 w-auto mb-6" width="360" height="100" fetchpriority="high">
+                    <div class="w-full pt-6 border-t border-border grid grid-cols-2 gap-4 text-center text-xs font-mono text-text-500">
+                        <div>
+                            <span class="block font-bold text-brand-900 uppercase">Role</span>
+                            Core Strategic Engineering
+                        </div>
+                        <div>
+                            <span class="block font-bold text-brand-900 uppercase">Status</span>
+                            Operational in Production
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Challenge -->
+            <div class="bg-white p-10 md:p-12 rounded-2xl border border-border space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">SYSTEM ARCHITECTURE</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 font-display">The challenge</h2>
+                </div>
+                <div class="space-y-4 text-text-700 leading-relaxed max-w-4xl">
+                    <p>
+                        Operating a digital asset exchange requires more than a trading interface. The underlying platform must coordinate orders, balances, deposits, withdrawals, wallet activity, external integrations and transactional records reliably.
+                    </p>
+                    <p>
+                        These systems must remain traceable and maintainable while handling continuously changing market and regulatory requirements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lunatech's Role -->
+            <div class="space-y-8">
+                <div class="space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">RESPONSIBILITIES</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 font-display">Lunatech’s role</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-cubes text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">Trading execution & exchange backend</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">High-performance order matching, balances, and market execution engines built for stability.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-code-fork text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">Transactional ledger & reconciliation</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">Immutable ledger accounting and automated reconciliation systems across liquid digital asset markets.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-shield text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">Wallet & blockchain automation</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">Secure wallet infrastructure, hot/cold custody automation, and deposit/withdrawal event processing.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-terminal text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">API gateway & third-party integrations</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">Scalable REST/WebSocket API endpoints and third-party payment/banking service integrations.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-flask text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">Platform monitoring & ops</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">Continuous 24/7 infrastructure observability, automated alert pipelines, and production maintenance.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-border space-y-3">
+                        <div class="w-10 h-10 bg-canvas rounded-lg flex items-center justify-center text-brand-700">
+                            <i class="fa fa-pencil text-lg"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-900 font-display text-base">Ledger & transaction audit tooling</h3>
+                        <p class="text-xs text-text-500 leading-relaxed">Custom analytical and transaction audit tools built for financial integrity and compliance reporting.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology -->
+            <div class="bg-[#EEF2F8] p-10 md:p-12 rounded-2xl border border-border space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">ENGINEERING STACK</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 font-display">Technology</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">TypeScript</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">PHP</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">PostgreSQL</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">Docker</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">Redis</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">Event-driven architecture</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">API integrations</span>
+                    <span class="px-4 py-2.5 bg-white text-brand-900 rounded-lg font-mono font-bold text-sm border border-border shadow-xs">Blockchain infrastructure</span>
+                </div>
+            </div>
+
+            <!-- Long-term Platform Ownership -->
+            <div class="bg-white p-10 md:p-12 rounded-2xl border border-border space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">PARTNERSHIP APPROACH</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 font-display">Long-term platform ownership</h2>
+                </div>
+                <div class="space-y-4 text-text-700 leading-relaxed max-w-4xl">
+                    <p>
+                        ChainEX demonstrates Lunatech’s approach to complex software: understand the operational risk, engineer the critical paths carefully and remain accountable after the initial launch.
+                    </p>
+                    <p>
+                        Our involvement extends beyond project delivery into ongoing platform engineering, infrastructure improvements, integrations and operational support.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conversion Paths (Two Separate CTA Cards) -->
+            <div class="space-y-8">
+                <div class="text-center space-y-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">NEXT STEPS</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 font-display">How can we help you?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Lunatech CTA -->
+                    <div class="bg-brand-900 text-white p-8 md:p-10 rounded-2xl border border-brand-700/30 shadow-md flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-accent-500">FOR ENGINEERING CLIENTS</span>
+                            <h3 class="text-2xl font-bold font-display">Building a fintech platform?</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Speak to Lunatech about secure transaction systems, exchange infrastructure, payment integrations or complex financial software.
+                            </p>
+                        </div>
+                        <div class="pt-4">
+                            <a href="contact.html" class="btn-primary inline-block text-center w-full sm:w-auto" data-analytics-event="chainex_case_study_cta" data-cta-position="case_study_card" data-cta-text="Discuss a project">Discuss a project</a>
+                        </div>
+                    </div>
+
+                    <!-- ChainEX CTA -->
+                    <div class="bg-white p-8 md:p-10 rounded-2xl border border-border shadow-md flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-500">FOR TRADERS & USERS</span>
+                            <h3 class="text-2xl font-bold text-brand-900 font-display">Interested in using ChainEX?</h3>
+                            <p class="text-text-700 text-sm leading-relaxed">
+                                Explore ChainEX and create an account on the South African digital asset platform.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4">
+                            <a href="https://chainex.io/signup/CX777621" target="_blank" rel="sponsored noopener noreferrer" class="btn-primary inline-block text-center w-full" data-analytics-event="chainex_referral_click" data-cta-position="case_study_card" data-cta-text="Open a ChainEX account">Open a ChainEX account</a>
+                            <div class="text-center">
+                                <a href="https://chainex.io/" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-700 hover:text-brand-500 font-semibold underline inline-flex items-center" data-analytics-event="chainex_website_click" data-cta-position="case_study_card" data-cta-text="Visit the ChainEX website">
+                                    Visit the ChainEX website <i class="fa fa-external-link text-[10px] ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclosures -->
+                <div class="bg-canvas border border-border rounded-xl p-6 text-xs text-text-500 space-y-2 leading-relaxed">
+                    <p>
+                        Lunatech is a technology partner to ChainEX and has a commercial interest in the platform. Lunatech may receive referral rewards if you register through this link. Crypto assets are high-risk and may result in loss of capital. This content is informational and does not constitute financial advice.
+                    </p>
+                    <p class="font-semibold text-text-700">
+                        ChainEX (Pty) Ltd is an authorised financial services provider, FSP 53799.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="bg-brand-900 border-t border-[#121B4B]/10 text-white py-16">
+  <div class="max-w-[1240px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 text-center md:text-left">
+      <!-- Brand & Positioning -->
+      <div class="md:col-span-5 space-y-6">
+        <div class="flex justify-center md:justify-start">
+          <img src="images/Lunatech-DK-Blue-Logo-Straight.png" alt="Lunatech Logo" width="180" height="44" class="h-10 w-auto brightness-0 invert" loading="lazy">
+        </div>
+        <p class="text-[#687386] text-sm leading-relaxed max-w-sm">
+          Intelligent software, built for the real world. Lunatech (Pty) Ltd. designs, develops and operates high-performance platforms across AI, fintech, automation and digital infrastructure.
+        </p>
+        <p class="text-[#687386] text-xs leading-relaxed max-w-sm pt-2 border-t border-[#DCE3EE]/10">
+          Flagship fintech platform: <a href="https://chainex.io/" target="_blank" rel="noopener noreferrer" class="text-[#4D61D8] hover:text-white transition duration-200 underline font-medium" data-analytics-event="chainex_website_click" data-cta-position="footer" data-cta-text="ChainEX">ChainEX</a> &mdash; engineered and operated in partnership with Lunatech.
+        </p>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div class="md:col-span-3 space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#4D61D8]">Navigation</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html" class="text-[#687386] hover:text-white transition duration-200">Home</a></li>
+          <li><a href="service.html" class="text-[#687386] hover:text-white transition duration-200">Services</a></li>
+          <li><a href="portfolio.html" class="text-[#687386] hover:text-white transition duration-200">Work</a></li>
+          <li><a href="about.html" class="text-[#687386] hover:text-white transition duration-200">About</a></li>
+          <li><a href="contact.html" class="text-[#687386] hover:text-white transition duration-200">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Policies -->
+      <div class="md:col-span-2 space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#4D61D8]">Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><button id="disclaimer-open" class="text-[#687386] hover:text-white transition duration-200 focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm">Disclaimer</button></li>
+          <li><button id="privacy-open" class="text-[#687386] hover:text-white transition duration-200 focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm">Privacy Policy</button></li>
+        </ul>
+      </div>
+
+      <!-- Social Connections -->
+      <div class="md:col-span-2 space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#4D61D8]">Follow Us</h3>
+        <div class="flex justify-center md:justify-start space-x-5 text-2xl">
+          <a href="https://www.linkedin.com/company/9361904" target="_blank" rel="noopener noreferrer" class="text-[#687386] hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm" aria-label="LinkedIn"><i class="fa fa-linkedin-square"></i></a>
+          <a href="https://x.com/lunatechza" target="_blank" rel="noopener noreferrer" class="text-[#687386] hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm" aria-label="X (formerly Twitter)"><i class="fa fa-twitter-square"></i></a>
+          <a href="https://facebook.com/lunatechza" target="_blank" rel="noopener noreferrer" class="text-[#687386] hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm" aria-label="Facebook"><i class="fa fa-facebook-square"></i></a>
+          <a href="https://github.com/lunatechza" target="_blank" rel="noopener noreferrer" class="text-[#687386] hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm" aria-label="GitHub"><i class="fa fa-github-square"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright and Office Info -->
+    <div class="mt-16 pt-8 border-t border-[#DCE3EE]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p class="text-[#687386] text-xs">
+        &copy; 2014-2026 Lunatech (Pty) Ltd. All Rights Reserved.
+      </p>
+      <p class="text-[#687386] text-xs">
+        J-Bay Surf Village, 2A Da Gama Rd, Jeffreys Bay, 6330, South Africa
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Modals -->
+<div id="disclaimer-modal" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-[#0B1026]/80 p-4">
+  <div class="bg-white text-[#273248] max-w-2xl w-full rounded-xl shadow-lg overflow-hidden border border-[#DCE3EE]">
+    <div class="p-6 border-b border-[#DCE3EE] flex justify-between items-center bg-[#F7F9FC]">
+      <h4 id="disclaimer-title" class="text-lg font-bold text-[#121B4B] font-display">Disclaimer</h4>
+      <button class="close-modal text-2xl font-light hover:text-[#2B3896] focus:ring-2 focus:ring-[#2B3896] focus:outline-none rounded-sm" aria-label="Close disclaimer modal">&times;</button>
+    </div>
+    <div class="p-6 max-h-[60vh] overflow-y-auto leading-relaxed text-sm space-y-4">
+      <p><span class="font-bold">Lunatech (Pty) Ltd.</span> (herein referred to as "Lunatech") does not represent or endorse the accuracy or reliability of any of the information, content, or advertisements (collectively, the "Materials") contained on, distributed through, or linked, downloaded, or accessed from any of the services contained on this Web site (the "Service"), nor the quality of any products, information, or other materials displayed, purchased, or obtained by you as a result of an advertisement or any other information or offer in or in connection with the Service (the "Products"). You hereby acknowledge that any reliance upon any Materials shall be at your sole risk. Lunatech reserves the right, in its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the Service or the Materials.</p>
+      <p>The service and the materials are provided by Lunatech on an "as is" basis, and Lunatech expressly disclaims any and all warranties, express or implied, including without limitation warranties of merchantability and fitness for a particular purpose, with respect to the service or any materials and products. In no event shall Lunatech be liable for any direct, indirect, incidental, punitive, or consequential damages of any kind whatsoever with respect to the service, the materials, and the products.</p>
+      <p>Lunatech makes no representations concerning any endeavor to review the content of sites linked to this site or any of the Materials, and so Lunatech isn't responsible for the accuracy, copyright compliance, legality, or decency of material contained in sites listed in the directory or in the Materials.</p>
+    </div>
+    <div class="p-4 border-t border-[#DCE3EE] bg-[#F7F9FC] text-right">
+      <button class="close-modal btn-primary text-xs py-2 px-4 min-h-[38px]">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-[#0B1026]/80 p-4">
+  <div class="bg-white text-[#273248] max-w-2xl w-full rounded-xl shadow-lg overflow-hidden border border-[#DCE3EE]">
+    <div class="p-6 border-b border-[#DCE3EE] flex justify-between items-center bg-[#F7F9FC]">
+      <h4 id="privacy-title" class="text-lg font-bold text-[#121B4B] font-display">Privacy Policy</h4>
+      <button class="close-modal text-2xl font-light hover:text-[#2B3896] focus:ring-2 focus:ring-[#2B3896] focus:outline-none rounded-sm" aria-label="Close privacy policy modal">&times;</button>
+    </div>
+    <div class="p-6 max-h-[60vh] overflow-y-auto leading-relaxed text-sm space-y-4">
+      <h5 class="text-base font-bold text-[#121B4B]">Your Privacy</h5>
+      <p>Lunatech (Pty) Ltd. respects your privacy and understands the importance of protecting your personal information. Lunatech will only collect information as required to respond to you, regarding the reason you contacted us. Lunatech will not send you marketing communications without your consent. Lunatech will not share your personal information with any third parties.</p>
+      <h5 class="text-base font-bold text-[#121B4B]">Your Consent</h5>
+      <p>By using our website, you consent to the collection and use of this information by Lunatech. If we decide to change our privacy policy, we will post those changes on this page so that you are always aware of what information we collect, how we use it, and under what circumstances we disclose it.</p>
+      <h5 class="text-base font-bold text-[#121B4B]">Questions and Feedback</h5>
+      <p>Should you have any questions or feedback related to our Privacy Policy, please email us at: <a href="mailto:contact@lunatech.co.za" class="text-[#2B3896] hover:underline font-semibold">contact@lunatech.co.za</a>.</p>
+    </div>
+    <div class="p-4 border-t border-[#DCE3EE] bg-[#F7F9FC] text-right">
+      <button class="close-modal btn-primary text-xs py-2 px-4 min-h-[38px]">Close</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
