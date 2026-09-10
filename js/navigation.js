@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.classList.add('opacity-70', 'cursor-not-allowed', 'animate-pulse');
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Preparing email...';
       }
 
       // Retrieve and sanitize form values to protect against HTML injection / XSS
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.classList.remove('opacity-70', 'cursor-not-allowed', 'animate-pulse');
-          submitBtn.textContent = 'Discuss your project';
+          submitBtn.textContent = 'Open Email Client to Send';
         }
         return;
       }
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.classList.remove('opacity-70', 'cursor-not-allowed', 'animate-pulse');
-          submitBtn.textContent = 'Discuss your project';
+          submitBtn.textContent = 'Open Email Client to Send';
         }
         return;
       }
