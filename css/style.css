@@ -589,6 +589,9 @@ video {
 }
 
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(14 109 175 / var(--tw-bg-opacity, 1));
@@ -607,6 +610,34 @@ video {
 .btn-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(6 76 124 / var(--tw-bg-opacity, 1));
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(220 227 238 / var(--tw-border-opacity, 1));
+  background-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(18 27 75 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn-secondary:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(43 56 150 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 242 248 / var(--tw-bg-opacity, 1));
 }
 
 .nav-link {
@@ -1255,6 +1286,10 @@ video {
   border-color: rgb(43 56 150 / 0.3);
 }
 
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
 .bg-\[\#0B1026\]\/80 {
   background-color: rgb(11 16 38 / 0.8);
 }
@@ -1897,6 +1932,10 @@ video {
 .hover\:bg-\[\#4D61D8\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(77 97 216 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-white\/10:hover {
+  background-color: rgb(255 255 255 / 0.1);
 }
 
 .hover\:text-\[\#2B3896\]:hover {

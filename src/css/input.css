@@ -4,7 +4,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-lunatech-blue hover:bg-lunatech-dark text-white font-bold py-2 px-4 rounded transition duration-300;
+    @apply inline-flex items-center justify-center bg-lunatech-blue hover:bg-lunatech-dark text-white font-bold py-2 px-4 rounded transition duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-transparent border border-border text-brand-900 font-bold py-2 px-4 rounded transition duration-300 hover:bg-canvas-alt hover:border-brand-700;
   }
 
   .nav-link {
