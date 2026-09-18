@@ -29,3 +29,7 @@
 ## 2026-07-18 - [Flexbox Text Centering and Button Component Consistency]
 **Learning:** Buttons rendered with explicit height or line-height rules without flex alignment can cause text to baseline-align or float towards the top of the button frame, particularly when rendered as styled anchor (`<a>`) tags. Applying `inline-flex items-center justify-center` ensures robust, consistent vertical and horizontal centering regardless of element tag or font line-height.
 **Action:** Standardize base button utilities using flexbox alignment (`inline-flex items-center justify-center`) and explicit padding across primary and secondary button components.
+
+## 2026-09-18 - [Consistent Footer Focus Indicators]
+**Learning:** In dark footer layouts, interactive links (such as navigation links and inline product anchors) often lack explicit focus indicators, causing keyboard focus outlines to default to low-contrast browser rings that are hard to see.
+**Action:** Consistently apply high-contrast focus ring utility classes (`focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm`) across all interactive footer links to ensure WCAG 2.4.7 focus visibility compliance.
