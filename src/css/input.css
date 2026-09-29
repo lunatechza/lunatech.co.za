@@ -12,7 +12,7 @@
   }
 
   .nav-link {
-    @apply px-3 py-2 rounded-md text-sm font-medium transition duration-300 text-slate-300 hover:text-white;
+    @apply px-3 py-2 rounded-md text-sm font-medium transition duration-300 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white;
   }
 
   .nav-link-active {
@@ -21,7 +21,7 @@
 
   /* Accessible high-contrast styling when header background is white (on scroll or other pages) */
   #main-header.bg-white .nav-link {
-    @apply text-text-700 hover:text-brand-500;
+    @apply text-text-700 hover:text-brand-500 focus-visible:ring-brand-700;
   }
 
   #main-header.bg-white .nav-link-active {
