@@ -2051,11 +2051,6 @@ video {
   --tw-ring-color: rgb(43 56 150 / var(--tw-ring-opacity, 1));
 }
 
-.focus\:ring-brand-700:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(43 56 150 / var(--tw-ring-opacity, 1));
-}
-
 .focus\:ring-white:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
