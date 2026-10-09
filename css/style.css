@@ -1035,8 +1035,16 @@ video {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .cursor-not-allowed {
   cursor: not-allowed;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .resize {
@@ -2047,11 +2055,6 @@ video {
 }
 
 .focus\:ring-\[\#2B3896\]:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(43 56 150 / var(--tw-ring-opacity, 1));
-}
-
-.focus\:ring-brand-700:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(43 56 150 / var(--tw-ring-opacity, 1));
 }
