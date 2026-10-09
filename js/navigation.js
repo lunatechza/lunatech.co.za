@@ -19,11 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle & interactions (scroll lock, click outside, ESC key, resize)
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuIconPath = mobileMenuBtn?.querySelector('path');
+
+  const HAMBURGER_PATH = 'M4 6h16M4 12h16M4 18h16';
+  const CLOSE_PATH = 'M6 18L18 6M6 6l12 12';
+
+  const updateMenuIcon = (isOpen) => {
+    if (mobileMenuIconPath) {
+      mobileMenuIconPath.setAttribute('d', isOpen ? CLOSE_PATH : HAMBURGER_PATH);
+    }
+  };
 
   const closeMobileMenu = () => {
     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
       mobileMenu.classList.add('hidden');
       mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+      updateMenuIcon(false);
       document.body.classList.remove('overflow-hidden');
     }
   };
@@ -31,8 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleMobileMenu = () => {
     if (!mobileMenu) return;
     const isHidden = mobileMenu.classList.toggle('hidden');
-    mobileMenuBtn?.setAttribute('aria-expanded', (!isHidden).toString());
-    document.body.classList.toggle('overflow-hidden', !isHidden);
+    const isOpen = !isHidden;
+    mobileMenuBtn?.setAttribute('aria-expanded', isOpen.toString());
+    updateMenuIcon(isOpen);
+    document.body.classList.toggle('overflow-hidden', isOpen);
   };
 
   if (mobileMenuBtn && mobileMenu) {
