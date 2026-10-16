@@ -20,7 +20,7 @@
 
 ## 2026-07-16 - [Focus Management in Modals & Scrolled Header Contrast]
 **Learning:** For users navigating via keyboards and assistive technologies, modal dialogs must trap and manage focus; focusing the primary closing action on open and restoring focus to the initiating trigger upon close preserves orientation. Additionally, dynamic background transitions (such as a header turning from transparent to white on scroll) require corresponding high-contrast navigation link styles to prevent low-contrast or white-on-white text readability failures.
-**Action:** Always implement robust focus tracking and restoration handlers for modal elements, and ensure color classes adapt cleanly when an ancestor's background color changes.
+**Action:** Always ensure color classes adapt cleanly when an ancestor's background color changes.
 
 ## 2026-07-17 - [Single-Page Form Success Transitions and Viewport Context]
 **Learning:** When transitioning a long form into a much shorter success container, hiding the form structure can cause the document's height to shrink drastically. If the page was scrolled to the bottom (e.g., to reach the submit button), the success container may get pushed above the viewport fold, creating a confusing blank-page sensation. Shifting programmatic focus to the success heading can also cause the browser to scroll the focused element underneath a fixed header.
@@ -33,3 +33,7 @@
 ## 2026-09-18 - [Consistent Footer Focus Indicators]
 **Learning:** In dark footer layouts, interactive links (such as navigation links and inline product anchors) often lack explicit focus indicators, causing keyboard focus outlines to default to low-contrast browser rings that are hard to see.
 **Action:** Consistently apply high-contrast focus ring utility classes (`focus:text-white focus:outline-none focus:ring-2 focus:ring-white rounded-sm`) across all interactive footer links to ensure WCAG 2.4.7 focus visibility compliance.
+
+## 2026-09-19 - [Programmatic Focus Management for Skip Links]
+**Learning:** An HTML anchor skip link with `href="#main-content"` visually scrolls the page to the target element in modern browsers, but does not move programmatic DOM focus to `<main>` unless `<main>` has `tabindex="-1"` and focus is explicitly set via JavaScript. Without explicit focus management, pressing `Tab` after clicking a skip link causes keyboard navigation to resume from the header rather than moving into the main content.
+**Action:** Add `tabindex="-1"` and `focus:outline-none` to target `<main>` containers and attach an event listener to `a[href="#main-content"]` that calls `mainContent.focus({ preventScroll: true })`.
