@@ -64,48 +64,54 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth >= 768) {
         closeMobileMenu();
       }
-    });
+    }, { passive: true });
   }
 
-  // Handle transparent header on scroll for Index / Home page
+  // Handle transparent header on scroll with rAF throttling and state tracking to prevent main-thread layout thrashing
   const header = document.getElementById('main-header');
   const headerLogo = document.getElementById('header-logo');
   if (header) {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        header.classList.add('bg-white', 'shadow-md', 'backdrop-blur-sm');
-        header.classList.remove('bg-transparent');
-        // If on home/index page where it's transparent initially
-        if (document.body.classList.contains('home-page')) {
-          headerLogo.classList.remove('brightness-0', 'invert');
-        }
-      } else {
-        if (document.body.classList.contains('home-page')) {
-          header.classList.remove('bg-white', 'shadow-md', 'backdrop-blur-sm');
-          header.classList.add('bg-transparent');
-          headerLogo.classList.add('brightness-0', 'invert');
-        } else {
-          header.classList.add('bg-white', 'shadow-md');
+    const isHomePage = document.body.classList.contains('home-page');
+    let isScrolled = null;
+    let ticking = false;
+
+    const updateHeaderState = () => {
+      const shouldScroll = window.scrollY > 50;
+
+      // Only execute DOM class list updates when scroll state crosses the threshold
+      if (shouldScroll !== isScrolled) {
+        isScrolled = shouldScroll;
+        if (shouldScroll) {
+          header.classList.add('bg-white', 'shadow-md', 'backdrop-blur-sm');
           header.classList.remove('bg-transparent');
+          if (isHomePage && headerLogo) {
+            headerLogo.classList.remove('brightness-0', 'invert');
+          }
+        } else {
+          if (isHomePage) {
+            header.classList.remove('bg-white', 'shadow-md', 'backdrop-blur-sm');
+            header.classList.add('bg-transparent');
+            if (headerLogo) {
+              headerLogo.classList.add('brightness-0', 'invert');
+            }
+          } else {
+            header.classList.add('bg-white', 'shadow-md');
+            header.classList.remove('bg-transparent');
+          }
         }
       }
+      ticking = false;
     };
 
     // Initial check
-    if (document.body.classList.contains('home-page')) {
-      if (window.scrollY <= 50) {
-        header.classList.add('bg-transparent');
-        headerLogo.classList.add('brightness-0', 'invert');
-      } else {
-        header.classList.add('bg-white', 'shadow-md');
-        headerLogo.classList.remove('brightness-0', 'invert');
-      }
-    } else {
-      header.classList.add('bg-white', 'shadow-md');
-      headerLogo.classList.remove('brightness-0', 'invert');
-    }
+    updateHeaderState();
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeaderState);
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
   // Modal interactions with robust accessibility focus management
