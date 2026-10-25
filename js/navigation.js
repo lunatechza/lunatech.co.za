@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const honeypot = contactForm.querySelector('input[name="website_url"]');
       if (honeypot && honeypot.value !== '') {
-        alert('Message could not be sent.');
+        // Silently drop spam submissions to prevent bot detection and adaptation
         return;
       }
 
@@ -210,17 +210,18 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.textContent = 'Preparing email...';
       }
 
-      // Retrieve and sanitize form values to protect against HTML injection / XSS
+      // Retrieve and sanitize form values to protect against HTML and CRLF (mail header) injection
       const sanitizeHTML = (text) => (text ? text.replace(/<[^>]*>/g, '') : '');
+      const sanitizeSingleLine = (text) => (text ? text.replace(/[\r\n]/g, '').replace(/<[^>]*>/g, '') : '');
 
-      const firstname = sanitizeHTML(document.getElementById('firstname')?.value || '');
-      const lastname = sanitizeHTML(document.getElementById('lastname')?.value || '');
-      const email = sanitizeHTML(document.getElementById('email')?.value || '');
-      const company = sanitizeHTML(document.getElementById('company')?.value || '');
+      const firstname = sanitizeSingleLine(document.getElementById('firstname')?.value || '');
+      const lastname = sanitizeSingleLine(document.getElementById('lastname')?.value || '');
+      const email = sanitizeSingleLine(document.getElementById('email')?.value || '');
+      const company = sanitizeSingleLine(document.getElementById('company')?.value || '');
       const projectTypeSelect = document.getElementById('project-type');
-      const projectType = projectTypeSelect ? projectTypeSelect.options[projectTypeSelect.selectedIndex]?.text : '';
+      const projectType = projectTypeSelect ? sanitizeSingleLine(projectTypeSelect.options[projectTypeSelect.selectedIndex]?.text || '') : '';
       const timelineSelect = document.getElementById('timeline');
-      const timeline = timelineSelect ? timelineSelect.options[timelineSelect.selectedIndex]?.text : '';
+      const timeline = timelineSelect ? sanitizeSingleLine(timelineSelect.options[timelineSelect.selectedIndex]?.text || '') : '';
       const message = sanitizeHTML(document.getElementById('message')?.value || '');
 
       // Defense-in-depth input length validation
