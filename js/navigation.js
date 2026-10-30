@@ -1,5 +1,16 @@
 // Navigation and UI interactions
 document.addEventListener('DOMContentLoaded', () => {
+  // Skip to main content keyboard focus management
+  const skipLink = document.querySelector('a[href="#main-content"]');
+  const mainContent = document.getElementById('main-content');
+  if (skipLink && mainContent) {
+    skipLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      mainContent.focus({ preventScroll: true });
+      mainContent.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
   // Highlight active navigation links (desktop and mobile)
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
